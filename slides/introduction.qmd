@@ -112,8 +112,30 @@ In other words:
 
 ## git as a CLI
 
-![](img/git-cli.png){fig-align="center" width=60%}
+::::{ .columns }
+:::{ .column width="50%"}
+![](img/git-cli.png){width=100%}
+:::
+:::{ .column width="50%" align="left"}
+<br>
 
+- `Git` is a command-line interface (CLI)
+- You interact with `git` using a terminal
+- All commands start w/ the keyword `git`
+<br>(`git status / log / add / commit`)
+:::
+::::
+
+
+. . .
+
+{{< fa lightbulb >}} &nbsp;But a lot of [third-party tools](https://git-scm.com/downloads/guis) provides a graphical interface to `git`
+<br>(e.g. [RStudio](https://posit.co/download/rstudio-desktop/), [GitKraken](https://www.gitkraken.com/), [GitHub Desktop](https://desktop.github.com/), extensions for [VSCode](https://code.visualstudio.com/), [VSCodium](https://vscodium.com/), [neovim](https://neovim.io/), etc.)
+
+
+<br>
+
+> Just keep in mind that for some operations you will need to use the terminal
 
 
 ## RStudio and git

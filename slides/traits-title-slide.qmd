@@ -1,0 +1,50 @@
+::: {.title-slide-container}
+
+::: {.title-slide-content}
+
+:::: {.columns}
+
+::: {.column .logo width="30%"}
+![](img/fellow-logo.png)
+:::
+
+::: {.column width="70%"}
+
+::: {.title}
+Traits database
+:::
+
+::: {.subtitle}
+Quick update and way forward
+:::
+
+::: {.date}
+```{r}
+#| echo: false
+#| results: asis
+olocale <- Sys.getlocale("LC_TIME")
+invisible(Sys.setlocale("LC_TIME", "en_US.UTF-8"))
+cat(format(Sys.Date(), "%B %Y"))
+invisible(Sys.setlocale("LC_TIME", olocale))
+```
+:::
+
+:::: {.columns}
+
+::: {.column .author width="45%"}
+Romain Frelat<br/>
+[{{< fa paper-plane >}}](mailto:romain.frelat@fondationbiodiversite.fr)
+[{{< fa brands github >}}](https://github.com/rfrelat)
+
+::: {.affiliation}
+{{< fa house >}} &nbsp;[FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/)
+:::
+:::
+
+::::
+
+:::
+::::
+
+:::
+:::

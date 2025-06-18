@@ -81,8 +81,10 @@ h2 {
   padding-bottom: 20px;
 }
 
-p, li, a {
- font-weight: 300; 
+p,
+li,
+a {
+  font-weight: 300;
 }
 
 figcaption {
@@ -92,7 +94,8 @@ figcaption {
   font-size: 120%;
 }
 
-figure p, figure p img {
+figure p,
+figure p img {
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -121,4 +124,13 @@ aside {
 
 .center p {
   text-align: center;
+}
+
+// from https://github.com/quarto-dev/quarto-cli/discussions/1386
+// doesn't work properly ...
+.v-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
 }

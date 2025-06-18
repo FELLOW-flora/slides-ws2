@@ -1,4 +1,4 @@
-# {{< fa brands github >}} &nbsp;Using GitHub
+# {{< fa brands github >}} &nbsp;Collaboration
 
 ## Code hosting platforms
 
@@ -21,7 +21,9 @@ Perfect solutions to collaborate on projects tracked by `git`
 - Automation & monitoring (CI/CD)
 
 
-## Main platforms
+## Code hosting platforms
+
+**Main platforms**
 
 ::::{ .columns }
 :::{ .column width="50%" .center}
@@ -73,26 +75,26 @@ Perfect solutions to collaborate on projects tracked by `git`
 ::::
 
 
-## GitHub - Account homepage
+## Presentation of GitHub
 
 ::: {.center}
 ![_Source:_ <https://github.com/ahasverus>](img/github-homepage.png){width="75%"}
 :::
 
 
-## GitHub - Organization homepage
+## Presentation of GitHub
 
 ::: {.center}
-![_Source:_ <https://github.com/FELLOW-flora>](img/github-fellow.png){width="75%"}
+![_Source:_ <https://github.com/frbcesab>](img/github-organization.png){width="75%"}
 :::
 
 
 
-## GitHub - Repository homepage
+## Presentation of GitHub
 
 
 ::: {.center}
-![_Source:_ <https://github.com/FELLOW-flora/fellow-traits>](img/github-traits.png){width="75%"}
+![_Source:_ <https://github.com/frbcesab/rwoslite>](img/github-repo.png){width="75%"}
 :::
 
 
@@ -119,6 +121,41 @@ Perfect solutions to collaborate on projects tracked by `git`
 
 
 
+## Clone a repository
+
+::: {.center}
+![](img/github-newrepo-4.png){width="75%"}
+:::
+
+
+
+## Clone a repository
+
+**On a terminal**
+
+::::{ .columns }
+:::{ .column width="50%" align="left"}
+```bash
+# Change path
+cd path/to/store/repository
+
+# Clone repository (SSH)
+git clone git@github.com:ahasverus/projectname.git
+
+# Clone repository (HTTPS)
+# git clone https://github.com/ahasverus/projectname.git
+
+# Go to repo
+cd projectname
+```
+:::
+:::{ .column width="50%" }
+:::
+::::
+
+
+
+
 ## Clone a repository w/ RStudio
 
 <br>
@@ -137,20 +174,12 @@ Perfect solutions to collaborate on projects tracked by `git`
 
 
 
-
-## Get the URL to clone
-
-::: {.center}
-![](img/github-newrepo-4.png){width="75%"}
-:::
-
-
-
-## Local copy of a repository
+## Clone a repository w/ RStudio
 
 ::: {.center}
 ![](img/rstudio-clone-3.png){width="80%"}
 :::
+
 
 
 ## Working w/ GitHub
@@ -369,7 +398,7 @@ git pull
 
 <br>
 
-{{< fa hand-point-right >}} &nbsp;Welcome to the wonderful world of `git` **conflicts**
+{{< fa hand-point-right >}} &nbsp;Welcome in the wonderful world of `git` **conflicts**
 
 
 ## Resolving conflicts
@@ -510,3 +539,18 @@ thirst for fortune and originality.
 
 {{< fa hand-point-right >}} &nbsp;You have to decide which version you want to keep.
 
+
+
+## Collaboration - GitHub Flow
+
+<br>
+
+::: {.center}
+![__Source:__ <https://edav.info/github.html>](img/github-flow.png){width="60%"}
+:::
+
+
+
+## Working w/ issues
+
+...

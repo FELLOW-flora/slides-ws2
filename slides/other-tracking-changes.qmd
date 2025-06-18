@@ -1,4 +1,313 @@
-# Using `git`
+# {{< fa code-branch >}} &nbsp;Tracking changes
+
+## Motivations
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+![Project content (without `git`)](img/folder_without_git.png)
+:::
+:::{ .column width="40%" }
+:::
+::::
+
+## Motivations
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+![Project content (without `git`)](img/folder_without_git.png)
+:::
+:::{ .column width="40%" }
+**Questions**
+
+- Which version of `analyses.R` is the final one?
+- What about `data.csv`?
+- What are the differences between versions?
+- Who have contributed to these versions? When?
+:::
+::::
+
+
+## Motivations
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+![Project content (without `git`)](img/folder_without_git.png)
+:::
+:::{ .column width="40%" }
+**Questions**
+
+- Which version of `analyses.R` is the final one?
+- What about `data.csv`?
+- What are the differences between versions?
+- Who have contributed to these versions? When?
+
+**Comments**
+
+- It becomes difficult to find new versions names
+- And this folder: what a mess!
+:::
+::::
+
+
+## Motivations
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+![Project content (without `git`)](img/folder_without_git.png)
+:::
+:::{ .column width="40%" }
+**Questions**
+
+- Which version of `analyses.R` is the final one?
+- What about `data.csv`?
+- What are the differences between versions?
+- Who have contributed to these versions? When?
+
+**Comments**
+
+- It becomes difficult to find new versions names
+- And this folder: what a mess!
+:::
+::::
+
+<br>
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+{{< fa hand-point-right >}} &nbsp;We need a tool that deals with versions for us
+:::
+:::{ .column width="40%" }
+:::
+::::
+
+
+## Motivations
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+![Project content (without `git`)](img/folder_without_git.png)
+:::
+:::{ .column width="40%" }
+**Questions**
+
+- Which version of `analyses.R` is the final one?
+- What about `data.csv`?
+- What are the differences between versions?
+- Who have contributed to these versions? When?
+
+**Comments**
+
+- It becomes difficult to find new versions names
+- And this folder: what a mess!
+:::
+::::
+
+<br>
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+{{< fa hand-point-right >}} &nbsp;We need a tool that deals with versions for us
+:::
+:::{ .column width="40%" }
+![](img/git-logo-long.png){width=50%}
+:::
+::::
+
+
+
+
+## Motivations
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+![Project content (with `git`)](img/folder_with_git.png)
+:::
+:::{ .column width="40%" }
+:::
+::::
+
+<br>
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+{{< fa hand-point-right >}} &nbsp;We need a tool that deals with versions for us
+:::
+:::{ .column width="40%" }
+![](img/git-logo-long.png){width=50%}
+:::
+::::
+
+
+## Presentation of `git`
+
+- Created by **Linus Torvalds** in 2005 for the development of the Linux kernel
+- [Distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control) (DVCS) - Peer-to-peer approach
+
+
+<br>
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+:::
+:::{ .column width="40%"}
+![](img/git-logo-long.png)
+:::
+::::
+
+
+## Presentation of `git`
+
+- Created by **Linus Torvalds** in 2005 for the development of the Linux kernel
+- [Distributed version control system](https://en.wikipedia.org/wiki/Distributed_version_control) (DVCS) - Peer-to-peer approach
+
+
+<br>
+
+::::{ .columns }
+:::{ .column width="60%" align="left"}
+**Advantages of VCS (and `git`)**
+
+- make contributions transparent (what / who / when / why)
+- keep the entire history of a file (and project)
+- inspect a file throughout its life time
+- revert back to a previous version
+- handle multiple versions (branches)
+- keep your working copy clean
+- facilitate collaborations w/ code hosting platforms
+<br>(GitHub, GitLab, Bitbucket, etc.)
+- backup your project
+:::
+:::{ .column width="40%"}
+![](img/git-logo-long.png)
+:::
+::::
+
+
+## A word of warning
+
+
+**`Git`** and **`GitHub`** are **not the same thing**
+
+- `Git` is a free and open-source **software**
+- `GitHub` (and co) is a **web platform** to host and share projects that use `git`
+
+
+. . . 
+
+<br>
+
+In other words:
+
+> You do not need `GitHub` to use `git` but you cannot use `GitHub` without using `git`
+
+
+## GUI clients
+
+
+::::{ .columns }
+:::{ .column width="50%"}
+![](img/git-cli.png){width=100%}
+:::
+:::{ .column width="50%" align="left"}
+<br>
+
+- `Git` is a command-line interface (CLI)
+- You interact with `git` using a terminal
+- All commands start w/ the keyword `git`
+<br>(`git status / log / add / commit`)
+:::
+::::
+
+
+. . .
+
+{{< fa lightbulb >}} &nbsp;But a lot of [third-party tools](https://git-scm.com/downloads/guis) provides a graphical interface to `git`
+<br>(e.g. [RStudio](https://posit.co/download/rstudio-desktop/), [GitKraken](https://www.gitkraken.com/), [GitHub Desktop](https://desktop.github.com/), extensions for [VSCode](https://code.visualstudio.com/), [VSCodium](https://vscodium.com/), [neovim](https://neovim.io/), etc.)
+
+
+<br>
+
+> Just keep in mind that for some operations you will need to use the terminal
+
+
+
+## Zoom on RStudio
+
+::::{ .columns }
+:::{ .column width="100%"}
+**Git main panel**
+
+![](img/git-rstudio.png){width=80%}
+:::
+:::{ .column width="0%"}
+:::
+::::
+
+
+## Zoom on RStudio
+
+
+::::{ .columns }
+:::{ .column width="50%"}
+**Stage files, view differences and commit changes**
+
+![](img/rstudio-change.png){width=100%}
+:::
+:::{ .column width="50%"}
+**View history and versions**
+
+![](img/rstudio-history.png){width=100%}
+:::
+::::
+
+
+
+## Installation & Configuration
+
+**Installation**
+
+To install `git` you can follow this tutorial: <https://frbcesab.github.io/training-courses/installation.html>
+
+
+. . .
+
+<br>
+
+**Configuration**
+
+To use `git`, you need to store your credentials (username and email) that will be added to all your commits.
+<br>
+Open a terminal and run:
+
+::::{ .columns }
+:::{ .column width="50%"}
+```bash
+git config --global user.name  "Jane Doe"
+git config --global user.email "jane.doe@mail.com"
+```
+:::
+:::{ .column width="50%"}
+:::
+::::
+
+. . .
+
+<br>
+
+**Initialization**
+
+For each project, `git` must be initialized w/
+
+::::{ .columns }
+:::{ .column width="50%"}
+```bash
+git init
+```
+:::
+:::{ .column width="50%"}
+:::
+::::
+
 
 ## How does `git` work?
 
@@ -21,8 +330,8 @@
 
 A snapshot is a two-step process:
 
-- **Stage files**: select which files to add to the version
-- **Commit changes**: save the version and add metadata (`commit message`)
+1. **Stage files**: select which files to add to the version
+2. **Commit changes**: save the version and add metadata (`commit message`)
 
 
 ## Basic workflow
@@ -43,7 +352,7 @@ The **three areas** of a `git` `repository`:
 
 - **`working copy`**: current state of the directory (what you actually see)
 - **`staging area`**: selected files that will be added to the next version
-- **`repository`**: area w/ all the versions<br/>(the `.git/` subdirectory)
+- **`repository`**: area w/ all the versions (the `.git/` subdirectory)
 :::
 ::::
 
@@ -223,122 +532,47 @@ git status
 :::
 ::::
 
+
+
 ## The status of a file
 
+<br>
 
-![](img/git-file-lifecycle-0.png){width=50% fig-align="center"}
+![](img/git-file-lifecycle.png){width=50% fig-align="center"}
 
+<br>
 
-With `git` a file can be **untracked** or **tracked**[^changes]. If it's **tracked**, it can be:
+With `git` a file can be **untracked** or **tracked**[^changes]. If it's tracked it can be:
 
 - unmodified
-- modifed and unstaged
+- modified and unstaged
 - modified and staged
 
 
 [^changes]: <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>
 
 
-## The status of a file
-
-
-![](img/git-file-lifecycle-1.png){width=50% fig-align="center"}
-
-
-When you create a new file, by default it's **untracked**.
-
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-2.png){width=50% fig-align="center"}
-
-
-To tell `git` to **track** this new file, you have to **stage** it.
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-3.png){width=50% fig-align="center"}
-
-
-After **commiting** your changes, the file becomes **unmodified** (up-to-date with the latest version).
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-4.png){width=50% fig-align="center"}
-
-
-If you edit the **tracked** file, it becomes **modified**.
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-5.png){width=50% fig-align="center"}
-
-
-When you decide to create a new version, **stage** the **modified** file.
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-6.png){width=50% fig-align="center"}
-
-
-After **commiting** your changes, the file becomes **unmodified** (up-to-date with the latest version).
-
-
-
-
 
 ## The `.gitignore`
 
 {{< fa hand-point-right >}} &nbsp;We can also tell `git` to **ignore specific files**: it's the purpose of the `.gitignore` file
+
+<br>
+
+Which files? For instance:
+
+- passwords, tokens and other secrets
+- temporary files
+- build files
+- large files
 
 . . .
 
-<br>
 
-::::{ .columns }
-:::{ .column width="50%"}
-Which files? For instance:
-
-- passwords, tokens and other secrets
-- temporary files
-- large files
-
-:::
-
-:::{ .column width="50%"}
-:::
-::::
-
-
-## The `.gitignore`
-
-{{< fa hand-point-right >}} &nbsp;We can also tell `git` to **ignore specific files**: it's the purpose of the `.gitignore` file
-
-<br>
-
-::::{ .columns }
-:::{ .column width="50%"}
-Which files? For instance:
-
-- passwords, tokens and other secrets
-- temporary files
-- large files
-
-:::
-
-:::{ .column width="50%"}
 The syntax is simple:
 
+::::{ .columns }
+:::{ .column width="50%"}
 ```txt
 # Ignore a specific file
 README.html
@@ -356,17 +590,15 @@ data/raw-data/
 data/raw-data/raw-data.csv
 ```
 :::
+:::{ .column width="50%"}
+:::
 ::::
-
-
-<br/>
 
 . . .
 
+<br>
 
 {{< fa hand-point-right >}} &nbsp;Template for {{< fa brands r-project >}} projects available [here](https://github.com/github/gitignore/blob/main/R.gitignore)
-
-
 
 ## Commits
 
@@ -406,12 +638,79 @@ When committing a new version (w/ `git commit`), the following information must 
 - **`WHY`** - the reason of the commit, i.e. what has been done compared to the previous version
 <br>(added by the user w/ `git commit`)
 :::
+:::{.column width=50%}
+Print the `git` **history** w/ `git log`
 
+```bash
+git log --stat
+
+# (*) commit dc4366af56223f533a32ef38794b4e567b0b7422
+# Author: ahasverus <ahasverus@users.noreply.github.com>
+# Date:   Wed Jun 28 14:11:20 2023 +0200
+# 
+#     docs: update CITATION.cff file
+# 
+#  CITATION.cff | 6 +++---
+#  1 file changed, 3 insertions(+), 3 deletions(-)
+# 
+# (*) commit 75c0072892544f779105067efc17d361365554e1 
+# Author: Nicolas Casajus <nicolas.casajus@fondationbiodiversite.fr>
+# Date:   Wed Jun 28 14:00:15 2023 +0200
+# 
+#     docs: update references in README
+# 
+#  README.Rmd | 6 +++---
+#  README.md  | 6 +++---
+#  2 files changed, 6 insertions(+), 6 deletions(-)
+# 
+# (*) commit 6a00f3539636726c3715a7e94eea04bd30ef8f69
+# Author: Nicolas Casajus <nicolas.casajus@fondationbiodiversite.fr>
+# Date:   Wed Jun 28 12:39:48 2023 +0000
+# 
+#     style: align R code lines in MS
+# 
+#  joss-paper/paper.bib | 2 +-
+#  joss-paper/paper.md  | 8 ++++----
+#  2 files changed, 5 insertions(+), 5 deletions(-)
+#
+# (*) commit 6f7d632c7d1dad3acddfb128a2c4a07f1e8a4e9c
+# ...
+```
+:::
+::::
+
+## Commit message
+
+::::{.columns}
 :::{.column width=50%}
 A commit message has a title line, and an optional body
 
 ```bash
-# Commit message w/ title
+# Commit message w/ title and body
+git commit -m "title" -m "body"
+
+# Commit message w/ only title
+git commit -m "title"
+```
+:::
+:::{.column width=50%}
+:::
+::::
+
+
+
+
+## Commit message
+
+::::{.columns}
+:::{.column width=50%}
+A commit message has a title line, and an optional body
+
+```bash
+# Commit message w/ title and body
+git commit -m "title" -m "body"
+
+# Commit message w/ only title
 git commit -m "title"
 ```
 
@@ -422,13 +721,80 @@ git commit -m "title"
 
 A good commit title:
 
+- should be **capitalized** (according to the `git` [documentation](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project))
 - should be **short** (less than 50 characters)
 - should be **informative** and **unambiguous**
 - should use **active voice** and **present tense**
 :::
+:::{.column width=50%}
+:::
 ::::
 
 . . .
+
+<br>
+
+An **optional body** can be added to provide **detailed information** and to link **external references** (e.g. issue, pull request, etc.)
+
+
+
+## Commit message
+
+::::{.columns}
+:::{.column width=50%}
+A commit message has a title line, and an optional body
+
+```bash
+# Commit message w/ title and body
+git commit -m "title" -m "body"
+
+# Commit message w/ only title
+git commit -m "title"
+```
+
+
+<br>
+
+**What is a good commit message?**
+
+A good commit title:
+
+- should be **capitalized** (according to the `git` [documentation](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project))
+- should be **short** (less than 50 characters)
+- should be **informative** and **unambiguous**
+- should use **active voice** and **present tense**
+:::
+:::{.column width=50%}
+Template provided by `git`:
+
+```txt
+Capitalized, short (50 chars or less) summary
+
+More detailed explanatory text, if necessary.  Wrap it to about 72
+characters or so.  In some contexts, the first line is treated as the
+subject of an email and the rest of the text as the body.  The blank
+line separating the summary from the body is critical (unless you omit
+the body entirely); tools like rebase will confuse you if you run the
+two together.
+
+Write your commit message in the imperative: "Fix bug" and not 
+"Fixed bug" or "Fixes bug."  This convention matches up with commit 
+messages generated by commands like git merge and git revert.
+
+Further paragraphs come after blank lines.
+
+- Bullet points are okay, too
+
+- Typically a hyphen or asterisk is used for the bullet, followed by a
+  single space, with blank lines in between, but conventions vary here
+
+- Use a hanging indent
+
+Link external references as: Fix #23
+```
+:::
+::::
+
 
 <br>
 
@@ -458,12 +824,11 @@ An **optional body** can be added to provide **detailed information** and to lin
 :::{.column width=50%}
 <br>
 
-- Commit a new version when you reach a **milestone**
-- Create **small** and atomic commits
-- Commit a state that is actually **working**
+- Commit a new version when you reach a milestone
+- Create small and atomic commits
+- Commit a state that is actually working
 :::
 ::::
-
 
 
 ## Undoing things
@@ -1092,5 +1457,4 @@ git log --oneline
 ```
 :::
 ::::
-
 
