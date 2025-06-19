@@ -38,9 +38,14 @@
 
 ## Content
 
-This online presentation, available at [**frbcesab.github.io/intro-git**](https://frbcesab.github.io/intro-git)
+These online presentations for workshop 2 of FRB-CESAB group FELLOW are available at [**frbcesab.github.io/intro-git**](https://frbcesab.github.io/intro-git)
+
+
 provides a quick introduction to version control with `git` and GitHub.
 
+provides an update on building a plant trait database
+
+provides a quick overviez of the environmental data
 
 <br>
 
