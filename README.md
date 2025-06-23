@@ -1,14 +1,10 @@
 <h1 align="center">
   <br>
-  <a href="https://frbcesab.github.io/intro-git"><img src="img/git-logo.png" alt="Logo" width="200"></a>
-  <br>Version control w/ git<br>
+  <a href="https://github.com/FELLOW-flora/slides-ws2"><img src="img/fellow-logo.png" alt="Logo" width="200"></a>
+  <br>FELLOW Workshop 2<br>
 </h1>
 
 <br>
-
-<p align="center">
-  <a href="https://frbcesab.github.io/intro-git" target="_blank"><b>frbcesab.github.io/intro-git</b></a></h4>
-</p>
 
 <p align="center">
   <a href="https://quarto.org/">
@@ -17,11 +13,9 @@
   <a href="https://choosealicense.com/licenses/cc-by-4.0/">
     <img src="https://img.shields.io/badge/License-CC%20BY%204.0-green.svg" alt="License CC BY 4.0">
   </a>
-  <br/>
-  <a href="https://github.com/FRBCesab/intro-git/actions/workflows/pages/pages-build-deployment">
-    <img src="https://github.com/FRBCesab/intro-git/actions/workflows/pages/pages-build-deployment/badge.svg" alt="GH Action">
-  </a>
 </p>
+
+
 
 <p align="center">
   <a href="#content">Content</a> •
@@ -30,80 +24,58 @@
   <a href="#code-of-conduct">Code of Conduct</a>
 </p>
 
-![](img/screenshot.png)
-
-
 <br>
 
 
 ## Content
 
-These online presentations for workshop 2 of FRB-CESAB group FELLOW are available at [**frbcesab.github.io/intro-git**](https://frbcesab.github.io/intro-git)
+Three online presentations for workshop 2 of FRB-CESAB group [FELLOW](https://www.fondationbiodiversite.fr/la-frb-en-action/programmes-et-projets/le-cesab/fellow/).
 
 
-provides a quick introduction to version control with `git` and GitHub.
+<h1 align="center">
+  <br>
+  <a href="https://fellow-flora.github.io/intro-git.html"><img src="img/git-logo.png" alt="Git" width="200"></a>
+  <br>Introduction to git and Github<br>
+</h1>
 
-provides an update on building a plant trait database
-
-provides a quick overviez of the environmental data
-
-<br>
-
-
-## Contribute
-
-### System requirement
-
-- [R](https://cran.r-project.org/)
-- [RStudio](https://posit.co/download/rstudio-desktop/)
-- [Quarto](https://quarto.org/)
-
-### Edit slides
-
-- Clone this repository
-
-```sh
-## Using the SSH protocol ----
-git clone git@github.com:frbcesab/intro-git.git
-
-## Using the HTTPS protocol ----
-git clone https://github.com/frbcesab/intro-git.git
-```
-
-- Install required packages
-
-Required R packages are listed in the 
-[`DESCRIPTION`](https://github.com/frbcesab/git-for-r-user/blob/main/DESCRIPTION)
-file.
-
-```r
-## Install 'remotes' package (if necessary) ----
-install.packages("remotes")
-
-## Install required packages ----
-remotes::install_deps()
-```
-
-- Edit the 
-[`index.qmd`](https://github.com/frbcesab/intro-git/blob/main/index.Rmd) 
-file or specific [chapters](https://github.com/frbcesab/intro-git/blob/main/slides/).
-
-### Render HTML presentation
-
-```r
-## Render HTML presentation ----
-quarto::quarto_render("index.qmd")
-```
+<div class="container">
+  <iframe class="responsive-iframe" src="https://fellow-flora.github.io/intro-git.html"></iframe>
+</div> 
 
 
-<br>
+<h1 align="center">
+  <br>
+  <a href="https://fellow-flora.github.io/fellow-traits.html"><img src="img/fellow-logo.png" alt="Traits" width="200"></a>
+  <br>Trait database<br>
+</h1>
+
+<div class="container">
+  <iframe class="responsive-iframe" src="https://fellow-flora.github.io/fellow-traits.html"></iframe>
+</div> 
+
+
+<h1 align="center">
+  <br>
+  <a href="https://fellow-flora.github.io/env-data.html"><img src="img/logo-dataenv-title.png" alt="Env" width="200"></a>
+  <br>Environment databases<br>
+</h1>
+
+<div class="container">
+  <iframe class="responsive-iframe" src="https://fellow-flora.github.io/env-data.html"></iframe>
+</div> 
+
+
 
 
 ## Citation
 
-Please cite this presentation as:
+Please cite these presentations as:
 
-> Casajus N (2024) Version control with git and GitHub. URL: <https://frbcesab.github.io/intro-git>.
+> Frelat R and Casajus N (2025) Version control with git and GitHub. URL: <https://fellow-flora.github.io/intro-git.html>.  
+
+> Frelat R (2025) Traits database - quick update and way forward. URL: <https://fellow-flora.github.io/fellow-traits.html>.  
+
+> Frelat R, Coux C, and Casajus N (2025) Environment databases frequently used in biodiversity research. URL: <https://fellow-flora.github.io/env-data.html>.  
 
 
 <br>
