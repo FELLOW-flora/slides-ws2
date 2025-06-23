@@ -1,6 +1,4 @@
 <h1 align="center">
-  <br>
-  <a href="https://github.com/FELLOW-flora/slides-ws2"><img src="img/fellow-logo.png" alt="Logo" width="200"></a>
   <br>FELLOW Workshop 2<br>
 </h1>
 
@@ -20,8 +18,9 @@
 <p align="center">
   <a href="#content">Content</a> •
   <a href="#contribute">Contribute</a> •
+  <a href="#reuse">Reuse</a> •
   <a href="#citation">Citation</a> •
-  <a href="#code-of-conduct">Code of Conduct</a>
+  <a href="#see-also">See also</a>
 </p>
 
 <br>
@@ -38,20 +37,12 @@ Three online presentations for workshop 2 of FRB-CESAB group [FELLOW](https://ww
   <br>Introduction to git and Github<br>
 </h1>
 
-<div class="container">
-  <iframe class="responsive-iframe" src="https://fellow-flora.github.io/intro-git.html"></iframe>
-</div> 
-
 
 <h1 align="center">
   <br>
   <a href="https://fellow-flora.github.io/fellow-traits.html"><img src="img/fellow-logo.png" alt="Traits" width="200"></a>
   <br>Trait database<br>
 </h1>
-
-<div class="container">
-  <iframe class="responsive-iframe" src="https://fellow-flora.github.io/fellow-traits.html"></iframe>
-</div> 
 
 
 <h1 align="center">
@@ -60,11 +51,18 @@ Three online presentations for workshop 2 of FRB-CESAB group [FELLOW](https://ww
   <br>Environment databases<br>
 </h1>
 
-<div class="container">
-  <iframe class="responsive-iframe" src="https://fellow-flora.github.io/env-data.html"></iframe>
-</div> 
 
 
+<br>
+
+## Contribute
+
+If you see mistakes or want to suggest changes, please [create an issue](https://github.com/FELLOW-flora/slides-ws2/issues/new) on the source repository.
+
+
+## Reuse
+
+Text and figures are licensed under Creative Commons Attribution [CC By 4.0](https://creativecommons.org/licenses/by/4.0/), unless otherwise noted.
 
 
 ## Citation
@@ -78,12 +76,6 @@ Please cite these presentations as:
 > Frelat R, Coux C, and Casajus N (2025) Environment databases frequently used in biodiversity research. URL: <https://fellow-flora.github.io/env-data.html>.  
 
 
-<br>
+## See also
 
-
-## Code of Conduct
-
-Please note that this project is released with a
-[Contributor Code of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
+Discover the other training courses provided by the FRB-CESAB and its partners: <https://frbcesab.github.io/training-courses/>
