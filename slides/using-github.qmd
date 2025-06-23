@@ -1,13 +1,14 @@
-# {{< fa brands github >}} &nbsp;Using GitHub
+# {{< fa brands github >}} &nbsp;Using GitHub for collaboration
 
 ## Code hosting platforms
 
+::::{ .columns }
+:::{ .column width="60%"}
 GitHub and co are **cloud-based git repository hosting services**
 
 {{< fa hand-point-right >}} &nbsp;
 Perfect solutions to collaborate on projects tracked by `git`
 
-. . .
 
 <br>
 
@@ -17,35 +18,35 @@ Perfect solutions to collaborate on projects tracked by `git`
 - Easy collaboration w/ branches, forks, pull requests
 - Issues tracking system
 - Enhanced documentation rendering (README, Wiki)
-- Static website hosting
-- Automation & monitoring (CI/CD)
 
 
-## Main platforms
-
-::::{ .columns }
-:::{ .column width="50%" .center}
+:::
+:::{ .column width="20%" .center}
 ![](img/github-logo.png){width="25%"}
 <br>
-[**GitHub**](https://github.com/)
 
+[**GitHub**](https://github.com/)
 <br>
+
 ![](img/bitbucket-logo.png){width="25%"}
 <br>
+
 [**BitBucket**](https://bitbucket.org/)
 :::
-:::{ .column width="50%" .center}
+:::{ .column width="20%" .center}
 ![](img/gitlab-logo.png){width="25%"}
 <br>
-[**GitLab**](https://gitlab.com/)
 
+[**GitLab**](https://gitlab.com/)
 <br>
+
 ![](img/sourceforge-logo.png){width="25%"}
 <br>
+
 [**SourceForge**](https://sourceforge.net/)
+
 :::
 ::::
-
 
 
 ## Presentation of GitHub
@@ -66,6 +67,8 @@ Perfect solutions to collaborate on projects tracked by `git`
 - Free account w/ unlimited public/private repositories
 - Organization account (w/ free plan)
 - Advanced tools for collaboration
+- Static website hosting  
+
 :::
 :::{ .column width="50%" .center}
 ![](img/github-logo.png){width="50%"}
@@ -83,7 +86,7 @@ Perfect solutions to collaborate on projects tracked by `git`
 ## GitHub - Organization homepage
 
 ::: {.center}
-![_Source:_ <https://github.com/FELLOW-flora>](img/github-fellow.png){width="75%"}
+![_Source:_ <https://github.com/FELLOW-flora>](img/github-fellow.png){width="60%"}
 :::
 
 
@@ -92,7 +95,7 @@ Perfect solutions to collaborate on projects tracked by `git`
 
 
 ::: {.center}
-![_Source:_ <https://github.com/FELLOW-flora/fellow-traits>](img/github-traits.png){width="75%"}
+![_Source:_ <https://github.com/FELLOW-flora/fellow-traits>](img/github-traits.png){width="60%"}
 :::
 
 
@@ -118,6 +121,12 @@ Perfect solutions to collaborate on projects tracked by `git`
 :::
 
 
+## Get the URL to clone
+
+::: {.center}
+![](img/github-newrepo-4.png){width="75%"}
+:::
+
 
 ## Clone a repository w/ RStudio
 
@@ -127,23 +136,13 @@ Perfect solutions to collaborate on projects tracked by `git`
 ::: {.column width="33%" .center}
 ![Select `Version Control`](img/rstudio-project.png){width="100%"}
 :::
-::: {.column width="33%" .center}
+::: {.column width="33%" .center .fragment}
 ![Select `Git`](img/rstudio-clone-1.png){width="100%"}
 :::
-::: {.column width="33%" .center}
+::: {.column width="33%" .center .fragment}
 ![Copy the URL and fill all the fields](img/rstudio-clone-2.png){width="100%"}
 :::
 ::::
-
-
-
-
-## Get the URL to clone
-
-::: {.center}
-![](img/github-newrepo-4.png){width="75%"}
-:::
-
 
 
 ## Local copy of a repository
@@ -163,6 +162,7 @@ Perfect solutions to collaborate on projects tracked by `git`
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git status
 
@@ -175,6 +175,7 @@ git status
 # Nothing added to commit but untracked files present
 # Use "git add <file>..." to track
 ```
+
 :::
 ::::
 
@@ -191,11 +192,13 @@ git status
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git add .
 ```
 
 <br>
+
 ```bash
 git status
 
@@ -206,6 +209,7 @@ git status
 #   (use "git restore --staged <file>..." to unstage)
 #   new file:   README.md
 ```
+
 :::
 ::::
 
@@ -220,11 +224,13 @@ git status
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git commit -m "add README"
 ```
 
 <br>
+
 ```bash
 git status
 
@@ -234,6 +240,7 @@ git status
 # 
 # nothing to commit, working tree clean
 ```
+
 :::
 ::::
 
@@ -248,6 +255,7 @@ git status
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git push
 
@@ -256,6 +264,7 @@ git push -u origin main
 ```
 
 <br>
+
 ```bash
 git status
 
@@ -264,9 +273,9 @@ git status
 # 
 # nothing to commit, working tree clean
 ```
+
 :::
 ::::
-
 
 ## Working w/ GitHub
 
@@ -290,12 +299,15 @@ git status
 ![](img/git-workflow-16.png){width=100%}
 :::
 :::{ .column width="40%"}
+
 <br>
+
 ```bash
 git pull
 ```
 
 <br>
+
 ```bash
 git status
 
@@ -304,6 +316,131 @@ git status
 # 
 # nothing to commit, working tree clean
 ```
+
+:::
+::::
+
+## Working w/ GitHub
+
+{{< fa hand-point-right >}} &nbsp; Make local changes
+
+::::{ .columns }
+:::{ .column width="60%"}
+![](img/git-workflow-17.png){width=100%}
+:::
+:::{ .column width="40%"}
+
+<br>
+
+
+```bash
+git status
+
+# On branch main
+# Your branch is up to date with 'origin/main'.
+# 
+# Changes not staged for commit:
+#  (use "git add <file>..." to update what will be committed)
+#  (use "git restore <file>..." to discard changes in working directory)
+#    modified:   data.csv
+#    modified:   README.md
+```
+
+:::
+::::
+
+## Working w/ GitHub
+
+{{< fa hand-point-right >}} &nbsp; `Stage` changes
+
+::::{ .columns }
+:::{ .column width="60%"}
+![](img/git-workflow-18.png){width=100%}
+:::
+:::{ .column width="40%"}
+
+<br>
+
+```bash
+git add .
+```
+
+<br>
+
+```bash
+git status
+
+# On branch main
+# Your branch is up to date with 'origin/main'
+#
+# Changes to be committed:
+#  (use "git restore --staged <file>..." to unstage)
+#   modified:   data.csv
+#   modified:   README.md
+```
+
+:::
+::::
+
+## Working w/ GitHub
+
+{{< fa hand-point-right >}} &nbsp; `Commit` changes
+
+::::{ .columns }
+:::{ .column width="60%"}
+![](img/git-workflow-19.png){width=100%}
+:::
+:::{ .column width="40%"}
+
+<br>
+
+```bash
+git commit -m "update dataset and README"
+```
+
+<br>
+
+```bash
+git status
+
+# On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
+#   (use "git push" to publish your local commits)
+# 
+# nothing to commit, working tree clean
+```
+
+:::
+::::
+
+## Working w/ GitHub
+
+{{< fa hand-point-right >}} &nbsp; Don't forget to `Push` changes to remote
+
+::::{ .columns }
+:::{ .column width="60%"}
+![](img/git-workflow-14.png){width=100%}
+:::
+:::{ .column width="40%"}
+
+<br>
+
+```bash
+git push
+```
+
+<br>
+
+```bash
+git status
+
+# On branch main
+# Your branch is up to date with 'origin/main'.
+# 
+# nothing to commit, working tree clean
+```
+
+
 :::
 ::::
 
@@ -369,67 +506,8 @@ git pull
 
 <br>
 
-{{< fa hand-point-right >}} &nbsp;Welcome to the wonderful world of `git` **conflicts**
-
-
-## Resolving conflicts
-
-**What is a (lexical) conflict?**
-
+{{< fa hand-point-right >}} &nbsp;Welcome to the wonderful world of `git` **conflicts**  
 A `git` conflict appears when two versions cannot be merged by `git` because changes have been made to the same lines.
-
-. . .
-
-<br>
-
-::::{ .columns }
-:::{ .column width="50%"}
-`README.md` - **Version A**
-
-```md
-# The SURPRISE pizza
-
-An amazing surprise of the dev team dedicated just to your fancy
-thirst for fortune and originality.
-```
-:::
-:::{ .column width="50%"}
-`README.md` - **Version B**
-
-```md
-# The Surprise Pizza
-
-An amazing surprise of the dev team dedicated just to your fancy
-thirst for fortune and originality.
-```
-:::
-::::
-
-. . .
-
-
-
-::::{ .columns }
-:::{ .column width="50%"}
-<br>
-
-`Git` will identify conflicts in files:
-
-```md
-<<<<<<< HEAD
-# The SURPRISE pizza
-=======
-# The Surprise Pizza
->>>>>>> b8302e6 (edit README)
-
-An amazing surprise of the dev team dedicated just to your fancy
-thirst for fortune and originality.
-```
-:::
-:::{ .column width="50%"}
-:::
-::::
-
 
 . . .
 
@@ -439,74 +517,102 @@ thirst for fortune and originality.
 
 
 
-## Resolving conflicts
+## The `.gitignore`
 
-**What is a (lexical) conflict?**
-
-A `git` conflict appears when two versions cannot be merged by `git` because changes have been made to the same lines.
-
+{{< fa hand-point-right >}} &nbsp;We can also tell `git` to **ignore specific files**: it's the purpose of the `.gitignore` file
 
 <br>
 
 ::::{ .columns }
 :::{ .column width="50%"}
-`README.md` - **Version A**
+Which files? For instance:
 
-```md
-# The SURPRISE pizza
+- passwords, tokens and other secrets
+- temporary files
+- large files
 
-An amazing surprise of the dev team dedicated just to your fancy
-thirst for fortune and originality.
-```
 :::
-:::{ .column width="50%"}
-`README.md` - **Version B**
 
-```md
-# The Surprise Pizza
+:::{ .column width="50%" .fragment}
+The syntax is simple:
 
-An amazing surprise of the dev team dedicated just to your fancy
-thirst for fortune and originality.
-```
-:::
-::::
+```txt
+# Ignore a specific file
+README.html
 
+# Ignore all PDF
+*.pdf
 
+# Ignore a folder
+data/
 
-::::{ .columns }
-:::{ .column width="50%"}
-<br>
+# Ignore a subfolder
+data/raw-data/
 
-`Git` will identify conflicts in files:
-
-```md
-<<<<<<< HEAD
-# The SURPRISE pizza
-=======
-# The Surprise Pizza
->>>>>>> b8302e6 (edit README)
-
-An amazing surprise of the dev team dedicated just to your fancy
-thirst for fortune and originality.
-```
-:::
-:::{ .column width="50%"}
-<br>
-
-`README.md` - **Final version**
-
-```md
-# My wonderful pizza
-
-An amazing surprise of the dev team dedicated just to your fancy
-thirst for fortune and originality.
+# Ignore a specific file in a subfolder
+data/raw-data/raw-data.csv
 ```
 :::
 ::::
 
 
+<br/>
 
-<br>
+. . .
 
-{{< fa hand-point-right >}} &nbsp;You have to decide which version you want to keep.
 
+{{< fa hand-point-right >}} &nbsp;Template for {{< fa brands r-project >}} projects available [here](https://github.com/github/gitignore/blob/main/R.gitignore)
+
+
+## Github as a gateway to open source projects
+
+::: {.center}
+![](img/git-advanced.png){width="100%"}
+:::
+
+You can access millions of open source projects and contribute to their development.  
+
+And if your Github repository is public, everyone can use and contribute to your project.    
+
+- **Fork** existing project : create an independent copy of a repository
+- **Pull request** : to contribute to the development of a repository
+- **Merge branches** : accept development from other branches
+
+
+## Github as a social platform
+
+::: {.center}
+![](img/git-advanced.png){width="100%"}
+:::
+
+- **Watch**/**Star** existing repository or **Follow** colleagues/developers  
+- **Issues** : anyone can fill an issue 
+  - good for keeping track of the todo list and future development
+  - issue can be attributed to someone, and categorized
+  - awesome tool to receive feedback from 'users' / colleagues
+- **Wiki** and **ReadMe** : help to organize the documentation of your code
+
+
+## Take home message
+
+<br>  <br>
+
+::: incremental
+- Git and Github are IT tools made to help you with the software development of your ecological data analysis. <br><br>
+- Key git/Github commands to remember: 
+::: 
+
+. . .
+
+::: {.center}
+**pull**   
+stage and **commit**  
+**push**  
+:::
+
+. . .
+
+<br> <br>
+
+Many resources online.   
+Please contact me if you have any issue using Git/Github: [{{< fa envelope >}} romain.frelat@fondationbiodiversite.fr](mailto:romain.frelat@fondationbiodiversite.fr)

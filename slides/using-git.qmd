@@ -1,4 +1,4 @@
-# Using `git`
+# Using `git` for tracking changes
 
 ## How does `git` work?
 
@@ -35,10 +35,12 @@ A snapshot is a two-step process:
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git init
 ```
 <br>
+
 The **three areas** of a `git` `repository`:
 
 - **`working copy`**: current state of the directory (what you actually see)
@@ -58,6 +60,7 @@ The **three areas** of a `git` `repository`:
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git status
 
@@ -89,11 +92,13 @@ git status
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git add data.csv
 ```
 
 <br>
+
 ```bash
 git status
 
@@ -127,11 +132,13 @@ git status
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git add data.csv analyses.R
 ```
 
 <br>
+
 ```bash
 git status
 
@@ -163,11 +170,13 @@ git status
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git add .
 ```
 
 <br>
+
 ```bash
 git status
 
@@ -195,6 +204,7 @@ git status
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git commit -m "a good commit message"
 ```
@@ -214,6 +224,7 @@ git commit -m "a good commit message"
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git status
 
@@ -223,172 +234,6 @@ git status
 :::
 ::::
 
-## The status of a file
-
-
-![](img/git-file-lifecycle-0.png){width=50% fig-align="center"}
-
-
-With `git` a file can be **untracked** or **tracked**[^changes]. If it's **tracked**, it can be:
-
-- unmodified
-- modifed and unstaged
-- modified and staged
-
-
-[^changes]: <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-1.png){width=50% fig-align="center"}
-
-
-When you create a new file, by default it's **untracked**.
-
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-2.png){width=50% fig-align="center"}
-
-
-To tell `git` to **track** this new file, you have to **stage** it.
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-3.png){width=50% fig-align="center"}
-
-
-After **commiting** your changes, the file becomes **unmodified** (up-to-date with the latest version).
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-4.png){width=50% fig-align="center"}
-
-
-If you edit the **tracked** file, it becomes **modified**.
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-5.png){width=50% fig-align="center"}
-
-
-When you decide to create a new version, **stage** the **modified** file.
-
-
-## The status of a file
-
-
-![](img/git-file-lifecycle-6.png){width=50% fig-align="center"}
-
-
-After **commiting** your changes, the file becomes **unmodified** (up-to-date with the latest version).
-
-
-
-
-
-## The `.gitignore`
-
-{{< fa hand-point-right >}} &nbsp;We can also tell `git` to **ignore specific files**: it's the purpose of the `.gitignore` file
-
-. . .
-
-<br>
-
-::::{ .columns }
-:::{ .column width="50%"}
-Which files? For instance:
-
-- passwords, tokens and other secrets
-- temporary files
-- large files
-
-:::
-
-:::{ .column width="50%"}
-:::
-::::
-
-
-## The `.gitignore`
-
-{{< fa hand-point-right >}} &nbsp;We can also tell `git` to **ignore specific files**: it's the purpose of the `.gitignore` file
-
-<br>
-
-::::{ .columns }
-:::{ .column width="50%"}
-Which files? For instance:
-
-- passwords, tokens and other secrets
-- temporary files
-- large files
-
-:::
-
-:::{ .column width="50%"}
-The syntax is simple:
-
-```txt
-# Ignore a specific file
-README.html
-
-# Ignore all PDF
-*.pdf
-
-# Ignore a folder
-data/
-
-# Ignore a subfolder
-data/raw-data/
-
-# Ignore a specific file in a subfolder
-data/raw-data/raw-data.csv
-```
-:::
-::::
-
-
-<br/>
-
-. . .
-
-
-{{< fa hand-point-right >}} &nbsp;Template for {{< fa brands r-project >}} projects available [here](https://github.com/github/gitignore/blob/main/R.gitignore)
-
-
-
-## Commits
-
-
-
-::::{.columns}
-:::{.column width=50%}
-When committing a new version (w/ `git commit`), the following information must be added:
-
-- **`WHO`** - the person who has made the changes
-<br>(automatically added by `git`)
-- **`WHEN`** - the date of the commit
-<br>(automatically added by `git`)
-- **`WHAT`** - the files that have been modified
-<br>(selected by the user w/ `git add`)
-- **`WHY`** - the reason of the commit, i.e. what has been done compared to the previous version
-<br>(added by the user w/ `git commit`)
-:::
-:::{.column width=50%}
-:::
-::::
-
 
 
 ## Commits
@@ -405,9 +250,10 @@ When committing a new version (w/ `git commit`), the following information must 
 <br>(selected by the user w/ `git add`)
 - **`WHY`** - the reason of the commit, i.e. what has been done compared to the previous version
 <br>(added by the user w/ `git commit`)
+
 :::
 
-:::{.column width=50%}
+:::{.column width=50% .fragment}
 A commit message has a title line, and an optional body
 
 ```bash
@@ -430,32 +276,30 @@ A good commit title:
 
 . . .
 
-<br>
-
-An **optional body** can be added to provide **detailed information** and to link **external references** (e.g. issue, pull request, etc.)
-
-
-
-## When should you commit?
-
-
 ::::{.columns}
 :::{.column width=50%}
-![](img/in-case-of-fire.png){width=90%}
 :::
 :::{.column width=50%}
+```bash
+# Print git history
+git log --oneline
+
+# f960dd3 (HEAD -> main) add data cleaning script
+# dd4472c update data.csv
+# 2bb9bb4 add README.md
+# 2d79e7e first commit
+```
 :::
 ::::
 
 
 ## When should you commit?
 
-
 ::::{.columns}
 :::{.column width=50%}
 ![](img/in-case-of-fire.png){width=90%}
 :::
-:::{.column width=50%}
+:::{.column width=50% .fragment}
 <br>
 
 - Commit a new version when you reach a **milestone**
@@ -481,6 +325,7 @@ You have modified a file but have not staged changes and you want to restore the
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git status
 
@@ -509,11 +354,13 @@ You have modified a file but have not staged changes and you want to restore the
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 # Restore one file (discard unstaged changes)
 git restore data.csv
 ```
 <br>
+
 ```bash
 git status
 
@@ -537,11 +384,13 @@ You have modified a file but have not staged changes and you want to restore the
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 # Restore one file (discard unstaged changes)
 git restore data.csv
 ```
 <br>
+
 ```bash
 git status
 
@@ -576,6 +425,7 @@ You have modified and staged file(s) but have not committed changes yet and you 
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 git status
 
@@ -601,11 +451,13 @@ You have modified and staged file(s) but have not committed changes yet and you 
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 # Unstage one file
 git restore --staged data.csv
 ```
 <br>
+
 ```bash
 git status
 
@@ -634,11 +486,13 @@ You have modified and staged file(s) but have not committed changes yet and you 
 :::
 :::{ .column width="40%"}
 <br>
+
 ```bash
 # Unstage one file
 git restore --staged data.csv
 ```
 <br>
+
 ```bash
 git status
 
@@ -651,6 +505,7 @@ git status
 # No changes added to commit
 ```
 <br>
+
 You can now restore the previous version w/:
 ```bash
 # Discard changes (restore previous version)
@@ -660,39 +515,10 @@ git restore data.csv
 ::::
 
 
-
 ## Undoing things
 
 {{< fa hand-point-right >}} &nbsp;
-**3. Change the most recent commit message**
-
-You have committed a new version but you want to change the commit message
-
-. . .
-
-::::{ .columns }
-:::{ .column width="60%"}
-![](img/git-workflow-6.png){width=100%}
-:::
-:::{ .column width="40%"}
-<br>
-```bash
-# Change message of the last commit
-git commit --amend
-```
-<br>
-Note that this will also change the ID of the commit
-:::
-::::
-
-
-
-
-
-## Undoing things
-
-{{< fa hand-point-right >}} &nbsp;
-**4. Revert one commit**
+**3. Revert one commit**
 
 You want to reverse the effects of a commit: use `git revert`
 
@@ -701,6 +527,7 @@ You want to reverse the effects of a commit: use `git revert`
 ::::{ .columns }
 :::{ .column width="50%"}
 <br>
+
 ```bash
 # Print git history
 git log --oneline
@@ -719,13 +546,14 @@ git log --oneline
 ## Undoing things
 
 {{< fa hand-point-right >}} &nbsp;
-**4. Revert one commit**
+**3. Revert one commit**
 
 You want to reverse the effects of a commit: use `git revert`
 
 ::::{ .columns }
 :::{ .column width="50%"}
 <br>
+
 ```bash
 # Print git history
 git log --oneline
@@ -737,6 +565,7 @@ git log --oneline
 ```
 
 <br>
+
 ```bash
 # Revert commit dd4472c
 git revert dd4472c
@@ -751,13 +580,14 @@ git revert dd4472c
 ## Undoing things
 
 {{< fa hand-point-right >}} &nbsp;
-**4. Revert one commit**
+**3. Revert one commit**
 
 You want to reverse the effects of a commit: use `git revert`
 
 ::::{ .columns }
 :::{ .column width="50%"}
 <br>
+
 ```bash
 # Print git history
 git log --oneline
@@ -769,12 +599,14 @@ git log --oneline
 ```
 
 <br>
+
 ```bash
 # Revert commit dd4472c
 git revert dd4472c
 ```
 
 <br>
+
 ```bash
 # Print git history
 git log --oneline
@@ -797,16 +629,15 @@ git log --oneline
 ## Undoing things
 
 {{< fa hand-point-right >}} &nbsp;
-**5. Deleting commits**
+**4. Deleting commits**
 
 You want to delete one or more commits: use `git reset --hard`
 
-. . .
-
 
 ::::{ .columns }
-:::{ .column width="50%"}
+:::{ .column width="50%" .fragment}
 <br>
+
 ```bash
 # Print git history
 git log --oneline
@@ -816,73 +647,23 @@ git log --oneline
 # 2bb9bb4 commit 2
 # 2d79e7e commit 1
 ```
+
+<br>
+
+```bash
+# Delete the two more recent commits
+git reset --hard 2bb9bb4
+```
+
 :::
 :::{ .column width="50%"}
 :::
 ::::
 
-
-
-## Undoing things
-
-{{< fa hand-point-right >}} &nbsp;
-**5. Deleting commits**
-
-You want to delete one or more commits: use `git reset --hard`
-
-
 ::::{ .columns }
-:::{ .column width="50%"}
+:::{ .column width="50%" .fragment}
 <br>
-```bash
-# Print git history
-git log --oneline
 
-# f960dd3 (HEAD -> main) commit 4
-# dd4472c commit 3
-# 2bb9bb4 commit 2
-# 2d79e7e commit 1
-```
-
-<br>
-```bash
-# Delete the two more recent commits
-git reset --hard HEAD~2
-```
-:::
-:::{ .column width="50%"}
-:::
-::::
-
-
-## Undoing things
-
-{{< fa hand-point-right >}} &nbsp;
-**5. Deleting commits**
-
-You want to delete one or more commits: use `git reset --hard`
-
-
-::::{ .columns }
-:::{ .column width="50%"}
-<br>
-```bash
-# Print git history
-git log --oneline
-
-# f960dd3 (HEAD -> main) commit 4
-# dd4472c commit 3
-# 2bb9bb4 commit 2
-# 2d79e7e commit 1
-```
-
-<br>
-```bash
-# Delete the two more recent commits
-git reset --hard HEAD~2
-```
-
-<br>
 ```bash
 # Print git history
 git log --oneline
@@ -890,207 +671,14 @@ git log --oneline
 # 2bb9bb4 (HEAD -> main) commit 2
 # 2d79e7e commit 1
 ```
+
 :::
 :::{ .column width="50%"}
 :::
 ::::
+
+
+. . . 
 
 `git reset --hard` alters the history. **Be careful** with this command
-
-
-
-## Back in time
-
-Use the command `git checkout` to inspect a file at a specific point in time
-
-
-. . .
-
-
-::::{ .columns }
-:::{ .column width="50%"}
-<br>
-```bash
-# Print git history
-git log --oneline
-
-# f960dd3 (HEAD -> main) commit 4
-# dd4472c commit 3
-# 2bb9bb4 commit 2
-# 2d79e7e commit 1
-```
-:::
-:::{ .column width="50%"}
-:::
-::::
-
-
-
-## Back in time
-
-Use the command `git checkout` to inspect a file at a specific point in time
-
-
-::::{ .columns }
-:::{ .column width="50%"}
-<br>
-```bash
-# Print git history
-git log --oneline
-
-# f960dd3 (HEAD -> main) commit 4
-# dd4472c commit 3
-# 2bb9bb4 commit 2
-# 2d79e7e commit 1
-```
-
-<br>
-```bash
-# Back in time
-git checkout 2bb9bb4
-```
-:::
-:::{ .column width="50%"}
-:::
-::::
-
-
-
-
-## Back in time
-
-Use the command `git checkout` to inspect a file at a specific point in time
-
-
-::::{ .columns }
-:::{ .column width="50%"}
-<br>
-```bash
-# Print git history
-git log --oneline
-
-# f960dd3 (HEAD -> main) commit 4
-# dd4472c commit 3
-# 2bb9bb4 commit 2
-# 2d79e7e commit 1
-```
-
-<br>
-```bash
-# Back in time
-git checkout 2bb9bb4
-```
-
-<br>
-```bash
-# Print git history
-git log --oneline
-
-# 2bb9bb4 (HEAD) commit 2
-# 2d79e7e commit 1
-```
-:::
-:::{ .column width="50%"}
-:::
-::::
-
-
-## Back in time
-
-Use the command `git checkout` to inspect a file at a specific point in time
-
-
-::::{ .columns }
-:::{ .column width="50%"}
-<br>
-```bash
-# Print git history
-git log --oneline
-
-# f960dd3 (HEAD -> main) commit 4
-# dd4472c commit 3
-# 2bb9bb4 commit 2
-# 2d79e7e commit 1
-```
-
-<br>
-```bash
-# Back in time
-git checkout 2bb9bb4
-```
-
-<br>
-```bash
-# Print git history
-git log --oneline
-
-# 2bb9bb4 (HEAD) commit 2
-# 2d79e7e commit 1
-```
-:::
-:::{ .column width="50%"}
-
-<br>
-```bash
-# Back to the more recent commit
-git checkout -
-```
-:::
-::::
-
-
-## Back in time
-
-Use the command `git checkout` to inspect a file at a specific point in time
-
-
-::::{ .columns }
-:::{ .column width="50%"}
-<br>
-```bash
-# Print git history
-git log --oneline
-
-# f960dd3 (HEAD -> main) commit 4
-# dd4472c commit 3
-# 2bb9bb4 commit 2
-# 2d79e7e commit 1
-```
-
-<br>
-```bash
-# Back in time
-git checkout 2bb9bb4
-```
-
-<br>
-```bash
-# Print git history
-git log --oneline
-
-# 2bb9bb4 (HEAD) commit 2
-# 2d79e7e commit 1
-```
-:::
-:::{ .column width="50%"}
-
-<br>
-```bash
-# Back to the more recent commit
-git checkout -
-```
-
-<br>
-```bash
-# Print git history
-git log --oneline
-
-# f960dd3 (HEAD -> main) commit 4
-# dd4472c commit 3
-# 2bb9bb4 commit 2
-# 2d79e7e commit 1
-```
-:::
-::::
-
 

@@ -138,7 +138,7 @@ names(db_na) <- gsub("original_taxa_", "", names(db_na))
 
 trait_na <- apply(is.na(traits[, real_traits]), 2, sum)
 
-# species with lowest completness
+# species with lowest completeness
 sp_na <- apply(is.na(traits[, real_traits]), 1, sum)
 
 # database with best match
@@ -162,6 +162,20 @@ trait_db <- strsplit(names(trait_na), "_") |>
     ordered = TRUE
   )
 # database with best match
+par(mar = c(4, 8, 1, 1))
+boxplot(
+  trait_na ~ trait_db,
+  horizontal = TRUE,
+  las = 1,
+  xlab = "Number of missing traits values",
+  ylab = ""
+)
+```
+
+## Trait coverage per database
+
+```{r natraitsrect}
+# add rectangle
 par(mar = c(4, 8, 1, 1))
 boxplot(
   trait_na ~ trait_db,

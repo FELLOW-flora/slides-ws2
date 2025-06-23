@@ -1,23 +1,80 @@
 # Introduction
 
-## Motivations
+## What is reproducibility?
 
-::::{ .columns }
-:::{ .column width="50%" align="left"}
-![Project content (without `git`)](img/folder_without_git.png)
+. . .
+
+<br>
+
+![Source: [https://eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/)](img/reproducible-matrix.jpg){fig-align="center" width="50%"}
+
+
+**Reproducibility** is about results that can be obtained by someone else (or you in the future) given the **same data** and the **same code**. This is a technical problem.
+
+<br/>
+
+{{< fa hand-point-right >}} &nbsp;We talk about **Computational reproducibility**
+
+
+## Reproducibility spectrum
+
+<br>
+
+![Source: Peng (2011)[^peng]](img/peng-science.jpg){fig-align="center" width="75%"}
+
+. . .
+
+<br/>
+
+Each degree of reproducibility requires additional skills and time. While some of those skills (e.g. literal programming, version control, setting up environments) pay off in the long run, they can require a high up-front investment.
+
+## Concepts
+
+According to Wilson _et al._ (2017)[^wilson], good practices for a better reproducibility can be organized into the following six topics:
+
+<br/>
+<br/>
+<br/>
+
+:::: { .columns }
+::: { .column .center width="33%"}
+{{< fa database >}} &nbsp;Data management
 :::
-:::{ .column width="50%" }
+::: { .column .center width="33%"}
+{{< fa folder >}} &nbsp;Project organization
+:::
+::: { .column .center width="33%"}
+{{< fa code-branch >}} &nbsp;Tracking changes
+:::
+::::
+
+<br/>
+
+:::: { .columns }
+::: { .column .center width="33%"}
+{{< fa brands github >}} &nbsp;Collaboration
+:::
+::: { .column .center width="33%"}
+{{< fa brands markdown >}} &nbsp;Manuscript
+:::
+::: { .column .center width="33%"}
+{{< fa brands r-project >}} &nbsp;Code & Software
 :::
 ::::
 
 
+[^wilson]: <https://doi.org/10.1371/journal.pcbi.1005510>
+
+
+# Version control
+
 ## Motivations
 
 ::::{ .columns }
 :::{ .column width="50%" align="left"}
 ![Project content (without `git`)](img/folder_without_git.png)
 :::
-:::{ .column width="50%" }
+:::{ .column width="50%" .fragment}
 **Questions**
 
 - Which version of `analyses.R` is the final one?
@@ -28,22 +85,7 @@
 ::::
 
 
-## Motivations
-
-::::{ .columns }
-:::{ .column width="50%" align="left"}
-![Project content (without `git`)](img/folder_without_git.png)
-:::
-:::{ .column width="50%" }
-**Questions**
-
-- Which version of `analyses.R` is the final one?
-- What about `data.csv`?
-- What are the differences between versions?
-- Who have contributed to these versions? When?
-:::
-::::
-
+. . .
 
 {{< fa hand-point-right >}} &nbsp;We need a tool that deals with versions for us
 
@@ -166,5 +208,16 @@ In other words:
 ![](img/rstudio-history.png){width=100%}
 :::
 ::::
+
+## Installation and configuration
+
+
+Check out and follow the tutorial from N. Casajus, 2024, Setting up R: [https://frbcesab.github.io/rsetup/](https://frbcesab.github.io/rsetup/).  
+
+
+![](img/rsetup.png){fig-align="center" width=50%}
+
+
+
 
 

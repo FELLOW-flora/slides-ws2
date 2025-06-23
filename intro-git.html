@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="intro-git_files/libs/revealjs/dist/theme/quarto-a832df15d158f8e75598e8ccdcb686ca.css">
+  <link rel="stylesheet" href="intro-git_files/libs/revealjs/dist/theme/quarto-73083ed00cdd070c08e263514a742ec0.css">
   <link href="intro-git_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="intro-git_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="intro-git_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -229,6 +229,62 @@
 <h1>Introduction</h1>
 
 </section>
+<section id="what-is-reproducibility" class="slide level2">
+<h2>What is reproducibility?</h2>
+<div class="fragment">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/reproducible-matrix.jpg" style="width:50.0%"></p>
+<figcaption>Source: <a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/">https://eliocamp.github.io</a></figcaption>
+</figure>
+</div>
+<p><strong>Reproducibility</strong> is about results that can be obtained by someone else (or you in the future) given the <strong>same data</strong> and the <strong>same code</strong>. This is a technical problem.</p>
+<p><br></p>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;We talk about <strong>Computational reproducibility</strong></p>
+</div>
+</section>
+<section id="reproducibility-spectrum" class="slide level2">
+<h2>Reproducibility spectrum</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/peng-science.jpg" style="width:75.0%"></p>
+<figcaption>Source: Peng (2011)[^peng]</figcaption>
+</figure>
+</div>
+<div class="fragment">
+<p><br></p>
+<p>Each degree of reproducibility requires additional skills and time. While some of those skills (e.g.&nbsp;literal programming, version control, setting up environments) pay off in the long run, they can require a high up-front investment.</p>
+</div>
+</section>
+<section id="concepts" class="slide level2">
+<h2>Concepts</h2>
+<p>According to Wilson <em>et al.</em> (2017)<sup>1</sup>, good practices for a better reproducibility can be organized into the following six topics:</p>
+<p><br> <br> <br></p>
+<div class="columns">
+<div class="column center" style="width:33%;">
+<p><i class="fa-solid fa-database" aria-label="database"></i> &nbsp;Data management</p>
+</div><div class="column center" style="width:33%;">
+<p><i class="fa-solid fa-folder" aria-label="folder"></i> &nbsp;Project organization</p>
+</div><div class="column center" style="width:33%;">
+<p><i class="fa-solid fa-code-branch" aria-label="code-branch"></i> &nbsp;Tracking changes</p>
+</div></div>
+<p><br></p>
+<div class="columns">
+<div class="column center" style="width:33%;">
+<p><i class="fa-brands fa-github" aria-label="github"></i> &nbsp;Collaboration</p>
+</div><div class="column center" style="width:33%;">
+<p><i class="fa-brands fa-markdown" aria-label="markdown"></i> &nbsp;Manuscript</p>
+</div><div class="column center" style="width:33%;">
+<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> &nbsp;Code &amp; Software</p>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://doi.org/10.1371/journal.pcbi.1005510" class="uri">https://doi.org/10.1371/journal.pcbi.1005510</a></p></li></ol></aside></section></section>
+<section>
+<section id="version-control" class="title-slide slide level1 center">
+<h1>Version control</h1>
+
+</section>
 <section id="motivations" class="slide level2">
 <h2>Motivations</h2>
 <div class="columns">
@@ -239,52 +295,20 @@
 <figcaption>Project content (without <code>git</code>)</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:50%;">
-
+</div><div class="column fragment" style="width:50%;">
+<p><strong>Questions</strong></p>
+<ul>
+<li>Which version of <code>analyses.R</code> is the final one?</li>
+<li>What about <code>data.csv</code>?</li>
+<li>What are the differences between versions?</li>
+<li>Who have contributed to these versions? When?</li>
+</ul>
 </div></div>
+<div class="fragment">
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;We need a tool that deals with versions for us</p>
+</div>
 </section>
 <section id="motivations-1" class="slide level2">
-<h2>Motivations</h2>
-<div class="columns">
-<div class="column" data-align="left" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/folder_without_git.png"></p>
-<figcaption>Project content (without <code>git</code>)</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<p><strong>Questions</strong></p>
-<ul>
-<li>Which version of <code>analyses.R</code> is the final one?</li>
-<li>What about <code>data.csv</code>?</li>
-<li>What are the differences between versions?</li>
-<li>Who have contributed to these versions? When?</li>
-</ul>
-</div></div>
-</section>
-<section id="motivations-2" class="slide level2">
-<h2>Motivations</h2>
-<div class="columns">
-<div class="column" data-align="left" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/folder_without_git.png"></p>
-<figcaption>Project content (without <code>git</code>)</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<p><strong>Questions</strong></p>
-<ul>
-<li>Which version of <code>analyses.R</code> is the final one?</li>
-<li>What about <code>data.csv</code>?</li>
-<li>What are the differences between versions?</li>
-<li>Who have contributed to these versions? When?</li>
-</ul>
-</div></div>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;We need a tool that deals with versions for us</p>
-</section>
-<section id="motivations-3" class="slide level2">
 <h2>Motivations</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -387,10 +411,19 @@
 <p><strong>View history and versions</strong></p>
 <p><img data-src="img/rstudio-history.png" style="width:100.0%"></p>
 </div></div>
+</section>
+<section id="installation-and-configuration" class="slide level2">
+<h2>Installation and configuration</h2>
+<p>Check out and follow the tutorial from N. Casajus, 2024, Setting up R: <a href="https://frbcesab.github.io/rsetup/">https://frbcesab.github.io/rsetup/</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/rsetup.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
 </section></section>
 <section>
-<section id="using-git" class="title-slide slide level1 center">
-<h1>Using <code>git</code></h1>
+<section id="using-git-for-tracking-changes" class="title-slide slide level1 center">
+<h1>Using <code>git</code> for tracking changes</h1>
 
 </section>
 <section id="how-does-git-work" class="slide level2">
@@ -422,7 +455,8 @@
 </div><div class="column" style="width:40%;">
 <p><br></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br> The <strong>three areas</strong> of a <code>git</code> <code>repository</code>:</p>
+<p><br></p>
+<p>The <strong>three areas</strong> of a <code>git</code> <code>repository</code>:</p>
 <ul>
 <li><strong><code>working copy</code></strong>: current state of the directory (what you actually see)</li>
 <li><strong><code>staging area</code></strong>: selected files that will be added to the next version</li>
@@ -553,126 +587,6 @@
 <span id="cb10-4"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
-<section id="the-status-of-a-file" class="slide level2">
-<h2>The status of a file</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/git-file-lifecycle-0.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-<p>With <code>git</code> a file can be <strong>untracked</strong> or <strong>tracked</strong><sup>1</sup>. If it’s <strong>tracked</strong>, it can be:</p>
-<ul>
-<li>unmodified</li>
-<li>modifed and unstaged</li>
-<li>modified and staged</li>
-</ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository" class="uri">https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository</a></p></li></ol></aside></section>
-<section id="the-status-of-a-file-1" class="slide level2">
-<h2>The status of a file</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/git-file-lifecycle-1.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-<p>When you create a new file, by default it’s <strong>untracked</strong>.</p>
-</section>
-<section id="the-status-of-a-file-2" class="slide level2">
-<h2>The status of a file</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/git-file-lifecycle-2.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-<p>To tell <code>git</code> to <strong>track</strong> this new file, you have to <strong>stage</strong> it.</p>
-</section>
-<section id="the-status-of-a-file-3" class="slide level2">
-<h2>The status of a file</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/git-file-lifecycle-3.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-<p>After <strong>commiting</strong> your changes, the file becomes <strong>unmodified</strong> (up-to-date with the latest version).</p>
-</section>
-<section id="the-status-of-a-file-4" class="slide level2">
-<h2>The status of a file</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/git-file-lifecycle-4.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-<p>If you edit the <strong>tracked</strong> file, it becomes <strong>modified</strong>.</p>
-</section>
-<section id="the-status-of-a-file-5" class="slide level2">
-<h2>The status of a file</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/git-file-lifecycle-5.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-<p>When you decide to create a new version, <strong>stage</strong> the <strong>modified</strong> file.</p>
-</section>
-<section id="the-status-of-a-file-6" class="slide level2">
-<h2>The status of a file</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/git-file-lifecycle-6.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-<p>After <strong>commiting</strong> your changes, the file becomes <strong>unmodified</strong> (up-to-date with the latest version).</p>
-</section>
-<section id="the-.gitignore" class="slide level2">
-<h2>The <code>.gitignore</code></h2>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;We can also tell <code>git</code> to <strong>ignore specific files</strong>: it’s the purpose of the <code>.gitignore</code> file</p>
-<div class="fragment">
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Which files? For instance:</p>
-<ul>
-<li>passwords, tokens and other secrets</li>
-<li>temporary files</li>
-<li>large files</li>
-</ul>
-</div><div class="column" style="width:50%;">
-
-</div></div>
-</div>
-</section>
-<section id="the-.gitignore-1" class="slide level2">
-<h2>The <code>.gitignore</code></h2>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;We can also tell <code>git</code> to <strong>ignore specific files</strong>: it’s the purpose of the <code>.gitignore</code> file</p>
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Which files? For instance:</p>
-<ul>
-<li>passwords, tokens and other secrets</li>
-<li>temporary files</li>
-<li>large files</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p>The syntax is simple:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href=""></a># Ignore a specific file</span>
-<span id="cb11-2"><a href=""></a>README.html</span>
-<span id="cb11-3"><a href=""></a></span>
-<span id="cb11-4"><a href=""></a># Ignore all PDF</span>
-<span id="cb11-5"><a href=""></a>*.pdf</span>
-<span id="cb11-6"><a href=""></a></span>
-<span id="cb11-7"><a href=""></a># Ignore a folder</span>
-<span id="cb11-8"><a href=""></a>data/</span>
-<span id="cb11-9"><a href=""></a></span>
-<span id="cb11-10"><a href=""></a># Ignore a subfolder</span>
-<span id="cb11-11"><a href=""></a>data/raw-data/</span>
-<span id="cb11-12"><a href=""></a></span>
-<span id="cb11-13"><a href=""></a># Ignore a specific file in a subfolder</span>
-<span id="cb11-14"><a href=""></a>data/raw-data/raw-data.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-<p><br></p>
-<div class="fragment">
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;Template for <i class="fa-brands fa-r-project" aria-label="r-project"></i> projects available <a href="https://github.com/github/gitignore/blob/main/R.gitignore">here</a></p>
-</div>
-</section>
 <section id="commits" class="slide level2">
 <h2>Commits</h2>
 <div class="columns">
@@ -684,25 +598,10 @@
 <li><strong><code>WHAT</code></strong> - the files that have been modified <br>(selected by the user w/ <code>git add</code>)</li>
 <li><strong><code>WHY</code></strong> - the reason of the commit, i.e.&nbsp;what has been done compared to the previous version <br>(added by the user w/ <code>git commit</code>)</li>
 </ul>
-</div><div class="column" style="width:50%;">
-
-</div></div>
-</section>
-<section id="commits-1" class="slide level2">
-<h2>Commits</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>When committing a new version (w/ <code>git commit</code>), the following information must be added:</p>
-<ul>
-<li><strong><code>WHO</code></strong> - the person who has made the changes <br>(automatically added by <code>git</code>)</li>
-<li><strong><code>WHEN</code></strong> - the date of the commit <br>(automatically added by <code>git</code>)</li>
-<li><strong><code>WHAT</code></strong> - the files that have been modified <br>(selected by the user w/ <code>git add</code>)</li>
-<li><strong><code>WHY</code></strong> - the reason of the commit, i.e.&nbsp;what has been done compared to the previous version <br>(added by the user w/ <code>git commit</code>)</li>
-</ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column fragment" style="width:50%;">
 <p>A commit message has a title line, and an optional body</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="co"># Commit message w/ title</span></span>
-<span id="cb12-2"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"title"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="co"># Commit message w/ title</span></span>
+<span id="cb11-2"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"title"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <p><strong>What is a good commit message?</strong></p>
 <p>A good commit title:</p>
@@ -713,8 +612,18 @@
 </ul>
 </div></div>
 <div class="fragment">
-<p><br></p>
-<p>An <strong>optional body</strong> can be added to provide <strong>detailed information</strong> and to link <strong>external references</strong> (e.g.&nbsp;issue, pull request, etc.)</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="co"># Print git history</span></span>
+<span id="cb12-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb12-3"><a href=""></a></span>
+<span id="cb12-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) add data cleaning script</span></span>
+<span id="cb12-5"><a href=""></a><span class="co"># dd4472c update data.csv</span></span>
+<span id="cb12-6"><a href=""></a><span class="co"># 2bb9bb4 add README.md</span></span>
+<span id="cb12-7"><a href=""></a><span class="co"># 2d79e7e first commit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 </div>
 </section>
 <section id="when-should-you-commit" class="slide level2">
@@ -722,16 +631,7 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="img/in-case-of-fire.png" style="width:90.0%"></p>
-</div><div class="column" style="width:50%;">
-
-</div></div>
-</section>
-<section id="when-should-you-commit-1" class="slide level2">
-<h2>When should you commit?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="img/in-case-of-fire.png" style="width:90.0%"></p>
-</div><div class="column" style="width:50%;">
+</div><div class="column fragment" style="width:50%;">
 <p><br></p>
 <ul>
 <li>Commit a new version when you reach a <strong>milestone</strong></li>
@@ -865,32 +765,36 @@
 <span id="cb23-7"><a href=""></a><span class="co">#   modified:   data.csv</span></span>
 <span id="cb23-8"><a href=""></a><span class="co">#</span></span>
 <span id="cb23-9"><a href=""></a><span class="co"># No changes added to commit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br> You can now restore the previous version w/:</p>
+<p><br></p>
+<p>You can now restore the previous version w/:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href=""></a><span class="co"># Discard changes (restore previous version)</span></span>
 <span id="cb24-2"><a href=""></a><span class="fu">git</span> restore data.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
 <section id="undoing-things-6" class="slide level2">
 <h2>Undoing things</h2>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>3. Change the most recent commit message</strong></p>
-<p>You have committed a new version but you want to change the commit message</p>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>3. Revert one commit</strong></p>
+<p>You want to reverse the effects of a commit: use <code>git revert</code></p>
 <div class="fragment">
 <div class="columns">
-<div class="column" style="width:60%;">
-<p><img data-src="img/git-workflow-6.png" style="width:100.0%"></p>
-</div><div class="column" style="width:40%;">
+<div class="column" style="width:50%;">
 <p><br></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href=""></a><span class="co"># Change message of the last commit</span></span>
-<span id="cb25-2"><a href=""></a><span class="fu">git</span> commit <span class="at">--amend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br> Note that this will also change the ID of the commit</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href=""></a><span class="co"># Print git history</span></span>
+<span id="cb25-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb25-3"><a href=""></a></span>
+<span id="cb25-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
+<span id="cb25-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
+<span id="cb25-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
+<span id="cb25-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+
 </div></div>
 </div>
 </section>
 <section id="undoing-things-7" class="slide level2">
 <h2>Undoing things</h2>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>4. Revert one commit</strong></p>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>3. Revert one commit</strong></p>
 <p>You want to reverse the effects of a commit: use <code>git revert</code></p>
-<div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br></p>
@@ -901,271 +805,90 @@
 <span id="cb26-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
 <span id="cb26-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
 <span id="cb26-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href=""></a><span class="co"># Revert commit dd4472c</span></span>
+<span id="cb27-2"><a href=""></a><span class="fu">git</span> revert dd4472c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 
 </div></div>
-</div>
 </section>
 <section id="undoing-things-8" class="slide level2">
 <h2>Undoing things</h2>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>4. Revert one commit</strong></p>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>3. Revert one commit</strong></p>
 <p>You want to reverse the effects of a commit: use <code>git revert</code></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb27-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb27-3"><a href=""></a></span>
-<span id="cb27-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb27-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb27-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb27-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href=""></a><span class="co"># Print git history</span></span>
+<span id="cb28-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb28-3"><a href=""></a></span>
+<span id="cb28-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
+<span id="cb28-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
+<span id="cb28-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
+<span id="cb28-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href=""></a><span class="co"># Revert commit dd4472c</span></span>
-<span id="cb28-2"><a href=""></a><span class="fu">git</span> revert dd4472c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-
-</div></div>
-</section>
-<section id="undoing-things-9" class="slide level2">
-<h2>Undoing things</h2>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>4. Revert one commit</strong></p>
-<p>You want to reverse the effects of a commit: use <code>git revert</code></p>
-<div class="columns">
-<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href=""></a><span class="co"># Revert commit dd4472c</span></span>
+<span id="cb29-2"><a href=""></a><span class="fu">git</span> revert dd4472c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb29-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb29-3"><a href=""></a></span>
-<span id="cb29-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb29-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb29-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb29-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href=""></a><span class="co"># Revert commit dd4472c</span></span>
-<span id="cb30-2"><a href=""></a><span class="fu">git</span> revert dd4472c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb31-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb31-3"><a href=""></a></span>
-<span id="cb31-4"><a href=""></a><span class="co"># d62ad3e (HEAD -&gt; main) Revert "commit 3"</span></span>
-<span id="cb31-5"><a href=""></a><span class="co"># f960dd3 commit 4</span></span>
-<span id="cb31-6"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb31-7"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb31-8"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href=""></a><span class="co"># Print git history</span></span>
+<span id="cb30-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb30-3"><a href=""></a></span>
+<span id="cb30-4"><a href=""></a><span class="co"># d62ad3e (HEAD -&gt; main) Revert "commit 3"</span></span>
+<span id="cb30-5"><a href=""></a><span class="co"># f960dd3 commit 4</span></span>
+<span id="cb30-6"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
+<span id="cb30-7"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
+<span id="cb30-8"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 
 </div></div>
 <p><code>git revert</code> does not alter the history and creates a new commit</p>
 </section>
-<section id="undoing-things-10" class="slide level2">
+<section id="undoing-things-9" class="slide level2">
 <h2>Undoing things</h2>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>5. Deleting commits</strong></p>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>4. Deleting commits</strong></p>
 <p>You want to delete one or more commits: use <code>git reset --hard</code></p>
-<div class="fragment">
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column fragment" style="width:50%;">
 <p><br></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb32-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb32-3"><a href=""></a></span>
-<span id="cb32-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb32-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb32-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb32-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href=""></a><span class="co"># Print git history</span></span>
+<span id="cb31-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb31-3"><a href=""></a></span>
+<span id="cb31-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
+<span id="cb31-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
+<span id="cb31-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
+<span id="cb31-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href=""></a><span class="co"># Delete the two more recent commits</span></span>
+<span id="cb32-2"><a href=""></a><span class="fu">git</span> reset <span class="at">--hard</span> 2bb9bb4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 
 </div></div>
-</div>
-</section>
-<section id="undoing-things-11" class="slide level2">
-<h2>Undoing things</h2>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>5. Deleting commits</strong></p>
-<p>You want to delete one or more commits: use <code>git reset --hard</code></p>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column fragment" style="width:50%;">
 <p><br></p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href=""></a><span class="co"># Print git history</span></span>
 <span id="cb33-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
 <span id="cb33-3"><a href=""></a></span>
-<span id="cb33-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb33-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb33-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb33-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href=""></a><span class="co"># Delete the two more recent commits</span></span>
-<span id="cb34-2"><a href=""></a><span class="fu">git</span> reset <span class="at">--hard</span> HEAD~2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-4"><a href=""></a><span class="co"># 2bb9bb4 (HEAD -&gt; main) commit 2</span></span>
+<span id="cb33-5"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 
 </div></div>
-</section>
-<section id="undoing-things-12" class="slide level2">
-<h2>Undoing things</h2>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <strong>5. Deleting commits</strong></p>
-<p>You want to delete one or more commits: use <code>git reset --hard</code></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb35-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb35-3"><a href=""></a></span>
-<span id="cb35-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb35-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb35-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb35-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href=""></a><span class="co"># Delete the two more recent commits</span></span>
-<span id="cb36-2"><a href=""></a><span class="fu">git</span> reset <span class="at">--hard</span> HEAD~2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb37-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb37-3"><a href=""></a></span>
-<span id="cb37-4"><a href=""></a><span class="co"># 2bb9bb4 (HEAD -&gt; main) commit 2</span></span>
-<span id="cb37-5"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-
-</div></div>
-<p><code>git reset --hard</code> alters the history. <strong>Be careful</strong> with this command</p>
-</section>
-<section id="back-in-time" class="slide level2">
-<h2>Back in time</h2>
-<p>Use the command <code>git checkout</code> to inspect a file at a specific point in time</p>
 <div class="fragment">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb38-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb38-3"><a href=""></a></span>
-<span id="cb38-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb38-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb38-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb38-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-
-</div></div>
+<p><code>git reset --hard</code> alters the history. <strong>Be careful</strong> with this command</p>
 </div>
-</section>
-<section id="back-in-time-1" class="slide level2">
-<h2>Back in time</h2>
-<p>Use the command <code>git checkout</code> to inspect a file at a specific point in time</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb39-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb39-3"><a href=""></a></span>
-<span id="cb39-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb39-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb39-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb39-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href=""></a><span class="co"># Back in time</span></span>
-<span id="cb40-2"><a href=""></a><span class="fu">git</span> checkout 2bb9bb4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-
-</div></div>
-</section>
-<section id="back-in-time-2" class="slide level2">
-<h2>Back in time</h2>
-<p>Use the command <code>git checkout</code> to inspect a file at a specific point in time</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb41-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb41-3"><a href=""></a></span>
-<span id="cb41-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb41-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb41-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb41-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href=""></a><span class="co"># Back in time</span></span>
-<span id="cb42-2"><a href=""></a><span class="fu">git</span> checkout 2bb9bb4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb43-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb43-3"><a href=""></a></span>
-<span id="cb43-4"><a href=""></a><span class="co"># 2bb9bb4 (HEAD) commit 2</span></span>
-<span id="cb43-5"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-
-</div></div>
-</section>
-<section id="back-in-time-3" class="slide level2">
-<h2>Back in time</h2>
-<p>Use the command <code>git checkout</code> to inspect a file at a specific point in time</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb44-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb44-3"><a href=""></a></span>
-<span id="cb44-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb44-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb44-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb44-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href=""></a><span class="co"># Back in time</span></span>
-<span id="cb45-2"><a href=""></a><span class="fu">git</span> checkout 2bb9bb4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb46-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb46-3"><a href=""></a></span>
-<span id="cb46-4"><a href=""></a><span class="co"># 2bb9bb4 (HEAD) commit 2</span></span>
-<span id="cb46-5"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<p><br></p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href=""></a><span class="co"># Back to the more recent commit</span></span>
-<span id="cb47-2"><a href=""></a><span class="fu">git</span> checkout <span class="at">-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-</section>
-<section id="back-in-time-4" class="slide level2">
-<h2>Back in time</h2>
-<p>Use the command <code>git checkout</code> to inspect a file at a specific point in time</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb48-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb48-3"><a href=""></a></span>
-<span id="cb48-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb48-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb48-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb48-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb49-1"><a href=""></a><span class="co"># Back in time</span></span>
-<span id="cb49-2"><a href=""></a><span class="fu">git</span> checkout 2bb9bb4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb50-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb50-3"><a href=""></a></span>
-<span id="cb50-4"><a href=""></a><span class="co"># 2bb9bb4 (HEAD) commit 2</span></span>
-<span id="cb50-5"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<p><br></p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href=""></a><span class="co"># Back to the more recent commit</span></span>
-<span id="cb51-2"><a href=""></a><span class="fu">git</span> checkout <span class="at">-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb52-1"><a href=""></a><span class="co"># Print git history</span></span>
-<span id="cb52-2"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb52-3"><a href=""></a></span>
-<span id="cb52-4"><a href=""></a><span class="co"># f960dd3 (HEAD -&gt; main) commit 4</span></span>
-<span id="cb52-5"><a href=""></a><span class="co"># dd4472c commit 3</span></span>
-<span id="cb52-6"><a href=""></a><span class="co"># 2bb9bb4 commit 2</span></span>
-<span id="cb52-7"><a href=""></a><span class="co"># 2d79e7e commit 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
 </section></section>
 <section>
-<section id="using-github" class="title-slide slide level1 center">
-<h1><i class="fa-brands fa-github" aria-label="github"></i> &nbsp;Using GitHub</h1>
+<section id="using-github-for-collaboration" class="title-slide slide level1 center">
+<h1><i class="fa-brands fa-github" aria-label="github"></i> &nbsp;Using GitHub for collaboration</h1>
 
 </section>
 <section id="code-hosting-platforms" class="slide level2">
 <h2>Code hosting platforms</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>GitHub and co are <strong>cloud-based git repository hosting services</strong></p>
 <p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; Perfect solutions to collaborate on projects tracked by <code>git</code></p>
-<div class="fragment">
 <p><br></p>
 <p><strong>Services</strong></p>
 <ul>
@@ -1173,20 +896,17 @@
 <li>Easy collaboration w/ branches, forks, pull requests</li>
 <li>Issues tracking system</li>
 <li>Enhanced documentation rendering (README, Wiki)</li>
-<li>Static website hosting</li>
-<li>Automation &amp; monitoring (CI/CD)</li>
 </ul>
-</div>
-</section>
-<section id="main-platforms" class="slide level2">
-<h2>Main platforms</h2>
-<div class="columns">
-<div class="column center" style="width:50%;">
-<p><img data-src="img/github-logo.png" style="width:25.0%"> <br> <a href="https://github.com/"><strong>GitHub</strong></a></p>
-<p><br> <img data-src="img/bitbucket-logo.png" style="width:25.0%"> <br> <a href="https://bitbucket.org/"><strong>BitBucket</strong></a></p>
-</div><div class="column center" style="width:50%;">
-<p><img data-src="img/gitlab-logo.png" style="width:25.0%"> <br> <a href="https://gitlab.com/"><strong>GitLab</strong></a></p>
-<p><br> <img data-src="img/sourceforge-logo.png" style="width:25.0%"> <br> <a href="https://sourceforge.net/"><strong>SourceForge</strong></a></p>
+</div><div class="column center" style="width:20%;">
+<p><img data-src="img/github-logo.png" style="width:25.0%"> <br></p>
+<p><a href="https://github.com/"><strong>GitHub</strong></a> <br></p>
+<p><img data-src="img/bitbucket-logo.png" style="width:25.0%"> <br></p>
+<p><a href="https://bitbucket.org/"><strong>BitBucket</strong></a></p>
+</div><div class="column center" style="width:20%;">
+<p><img data-src="img/gitlab-logo.png" style="width:25.0%"> <br></p>
+<p><a href="https://gitlab.com/"><strong>GitLab</strong></a> <br></p>
+<p><img data-src="img/sourceforge-logo.png" style="width:25.0%"> <br></p>
+<p><a href="https://sourceforge.net/"><strong>SourceForge</strong></a></p>
 </div></div>
 </section>
 <section id="presentation-of-github" class="slide level2">
@@ -1206,6 +926,7 @@
 <li>Free account w/ unlimited public/private repositories</li>
 <li>Organization account (w/ free plan)</li>
 <li>Advanced tools for collaboration</li>
+<li>Static website hosting</li>
 </ul>
 </div><div class="column center" style="width:50%;">
 <p><img data-src="img/github-logo.png" style="width:50.0%"></p>
@@ -1227,7 +948,7 @@
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/github-fellow.png" style="width:75.0%"></p>
+<p><img data-src="img/github-fellow.png" style="width:60.0%"></p>
 <figcaption><em>Source:</em> <a href="https://github.com/FELLOW-flora" class="uri">https://github.com/FELLOW-flora</a></figcaption>
 </figure>
 </div>
@@ -1238,7 +959,7 @@
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/github-traits.png" style="width:75.0%"></p>
+<p><img data-src="img/github-traits.png" style="width:60.0%"></p>
 <figcaption><em>Source:</em> <a href="https://github.com/FELLOW-flora/fellow-traits" class="uri">https://github.com/FELLOW-flora/fellow-traits</a></figcaption>
 </figure>
 </div>
@@ -1262,6 +983,12 @@
 <p><img data-src="img/github-newrepo-3.png" style="width:75.0%"></p>
 </div>
 </section>
+<section id="get-the-url-to-clone" class="slide level2">
+<h2>Get the URL to clone</h2>
+<div class="center">
+<p><img data-src="img/github-newrepo-4.png" style="width:75.0%"></p>
+</div>
+</section>
 <section id="clone-a-repository-w-rstudio" class="slide level2">
 <h2>Clone a repository w/ RStudio</h2>
 <p><br></p>
@@ -1273,14 +1000,14 @@
 <figcaption>Select <code>Version Control</code></figcaption>
 </figure>
 </div>
-</div><div class="column center" style="width:33%;">
+</div><div class="column center fragment" style="width:33%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/rstudio-clone-1.png" style="width:100.0%"></p>
 <figcaption>Select <code>Git</code></figcaption>
 </figure>
 </div>
-</div><div class="column center" style="width:33%;">
+</div><div class="column center fragment" style="width:33%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/rstudio-clone-2.png" style="width:100.0%"></p>
@@ -1288,12 +1015,6 @@
 </figure>
 </div>
 </div></div>
-</section>
-<section id="get-the-url-to-clone" class="slide level2">
-<h2>Get the URL to clone</h2>
-<div class="center">
-<p><img data-src="img/github-newrepo-4.png" style="width:75.0%"></p>
-</div>
 </section>
 <section id="local-copy-of-a-repository" class="slide level2">
 <h2>Local copy of a repository</h2>
@@ -1309,16 +1030,16 @@
 <p><img data-src="img/git-workflow-11.png" style="width:100.0%"></p>
 </div><div class="column" style="width:40%;">
 <p><br></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb53-1"><a href=""></a><span class="fu">git</span> status</span>
-<span id="cb53-2"><a href=""></a></span>
-<span id="cb53-3"><a href=""></a><span class="co"># On branch main</span></span>
-<span id="cb53-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'</span></span>
-<span id="cb53-5"><a href=""></a><span class="co">#</span></span>
-<span id="cb53-6"><a href=""></a><span class="co"># Untracked files:</span></span>
-<span id="cb53-7"><a href=""></a><span class="co">#   README.md</span></span>
-<span id="cb53-8"><a href=""></a><span class="co"># </span></span>
-<span id="cb53-9"><a href=""></a><span class="co"># Nothing added to commit but untracked files present</span></span>
-<span id="cb53-10"><a href=""></a><span class="co"># Use "git add &lt;file&gt;..." to track</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href=""></a><span class="fu">git</span> status</span>
+<span id="cb34-2"><a href=""></a></span>
+<span id="cb34-3"><a href=""></a><span class="co"># On branch main</span></span>
+<span id="cb34-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'</span></span>
+<span id="cb34-5"><a href=""></a><span class="co">#</span></span>
+<span id="cb34-6"><a href=""></a><span class="co"># Untracked files:</span></span>
+<span id="cb34-7"><a href=""></a><span class="co">#   README.md</span></span>
+<span id="cb34-8"><a href=""></a><span class="co"># </span></span>
+<span id="cb34-9"><a href=""></a><span class="co"># Nothing added to commit but untracked files present</span></span>
+<span id="cb34-10"><a href=""></a><span class="co"># Use "git add &lt;file&gt;..." to track</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
 <section id="working-w-github-1" class="slide level2">
@@ -1329,16 +1050,16 @@
 <p><img data-src="img/git-workflow-12.png" style="width:100.0%"></p>
 </div><div class="column" style="width:40%;">
 <p><br></p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb54-1"><a href=""></a><span class="fu">git</span> add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href=""></a><span class="fu">git</span> add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href=""></a><span class="fu">git</span> status</span>
-<span id="cb55-2"><a href=""></a></span>
-<span id="cb55-3"><a href=""></a><span class="co"># On branch main</span></span>
-<span id="cb55-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'</span></span>
-<span id="cb55-5"><a href=""></a><span class="co">#</span></span>
-<span id="cb55-6"><a href=""></a><span class="co"># Changes to be committed:</span></span>
-<span id="cb55-7"><a href=""></a><span class="co">#   (use "git restore --staged &lt;file&gt;..." to unstage)</span></span>
-<span id="cb55-8"><a href=""></a><span class="co">#   new file:   README.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href=""></a><span class="fu">git</span> status</span>
+<span id="cb36-2"><a href=""></a></span>
+<span id="cb36-3"><a href=""></a><span class="co"># On branch main</span></span>
+<span id="cb36-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'</span></span>
+<span id="cb36-5"><a href=""></a><span class="co">#</span></span>
+<span id="cb36-6"><a href=""></a><span class="co"># Changes to be committed:</span></span>
+<span id="cb36-7"><a href=""></a><span class="co">#   (use "git restore --staged &lt;file&gt;..." to unstage)</span></span>
+<span id="cb36-8"><a href=""></a><span class="co">#   new file:   README.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
 <section id="working-w-github-2" class="slide level2">
@@ -1349,15 +1070,15 @@
 <p><img data-src="img/git-workflow-13.png" style="width:100.0%"></p>
 </div><div class="column" style="width:40%;">
 <p><br></p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb56-1"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"add README"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"add README"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb57-1"><a href=""></a><span class="fu">git</span> status</span>
-<span id="cb57-2"><a href=""></a></span>
-<span id="cb57-3"><a href=""></a><span class="co"># On branch main</span></span>
-<span id="cb57-4"><a href=""></a><span class="co"># Your branch is ahead of 'origin/main' by 1 commit.</span></span>
-<span id="cb57-5"><a href=""></a><span class="co">#   (use "git push" to publish your local commits)</span></span>
-<span id="cb57-6"><a href=""></a><span class="co"># </span></span>
-<span id="cb57-7"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href=""></a><span class="fu">git</span> status</span>
+<span id="cb38-2"><a href=""></a></span>
+<span id="cb38-3"><a href=""></a><span class="co"># On branch main</span></span>
+<span id="cb38-4"><a href=""></a><span class="co"># Your branch is ahead of 'origin/main' by 1 commit.</span></span>
+<span id="cb38-5"><a href=""></a><span class="co">#   (use "git push" to publish your local commits)</span></span>
+<span id="cb38-6"><a href=""></a><span class="co"># </span></span>
+<span id="cb38-7"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
 <section id="working-w-github-3" class="slide level2">
@@ -1368,17 +1089,17 @@
 <p><img data-src="img/git-workflow-14.png" style="width:100.0%"></p>
 </div><div class="column" style="width:40%;">
 <p><br></p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb58-1"><a href=""></a><span class="fu">git</span> push</span>
-<span id="cb58-2"><a href=""></a></span>
-<span id="cb58-3"><a href=""></a><span class="co"># Sometimes, you'll need to use:</span></span>
-<span id="cb58-4"><a href=""></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href=""></a><span class="fu">git</span> push</span>
+<span id="cb39-2"><a href=""></a></span>
+<span id="cb39-3"><a href=""></a><span class="co"># Sometimes, you'll need to use:</span></span>
+<span id="cb39-4"><a href=""></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb59-1"><a href=""></a><span class="fu">git</span> status</span>
-<span id="cb59-2"><a href=""></a></span>
-<span id="cb59-3"><a href=""></a><span class="co"># On branch main</span></span>
-<span id="cb59-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'.</span></span>
-<span id="cb59-5"><a href=""></a><span class="co"># </span></span>
-<span id="cb59-6"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href=""></a><span class="fu">git</span> status</span>
+<span id="cb40-2"><a href=""></a></span>
+<span id="cb40-3"><a href=""></a><span class="co"># On branch main</span></span>
+<span id="cb40-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'.</span></span>
+<span id="cb40-5"><a href=""></a><span class="co"># </span></span>
+<span id="cb40-6"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
 <section id="working-w-github-4" class="slide level2">
@@ -1399,14 +1120,92 @@
 <p><img data-src="img/git-workflow-16.png" style="width:100.0%"></p>
 </div><div class="column" style="width:40%;">
 <p><br></p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb60-1"><a href=""></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href=""></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb61-1"><a href=""></a><span class="fu">git</span> status</span>
-<span id="cb61-2"><a href=""></a></span>
-<span id="cb61-3"><a href=""></a><span class="co"># On branch main</span></span>
-<span id="cb61-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'.</span></span>
-<span id="cb61-5"><a href=""></a><span class="co"># </span></span>
-<span id="cb61-6"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href=""></a><span class="fu">git</span> status</span>
+<span id="cb42-2"><a href=""></a></span>
+<span id="cb42-3"><a href=""></a><span class="co"># On branch main</span></span>
+<span id="cb42-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'.</span></span>
+<span id="cb42-5"><a href=""></a><span class="co"># </span></span>
+<span id="cb42-6"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="working-w-github-6" class="slide level2">
+<h2>Working w/ GitHub</h2>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; Make local changes</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/git-workflow-17.png" style="width:100.0%"></p>
+</div><div class="column" style="width:40%;">
+<p><br></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href=""></a><span class="fu">git</span> status</span>
+<span id="cb43-2"><a href=""></a></span>
+<span id="cb43-3"><a href=""></a><span class="co"># On branch main</span></span>
+<span id="cb43-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'.</span></span>
+<span id="cb43-5"><a href=""></a><span class="co"># </span></span>
+<span id="cb43-6"><a href=""></a><span class="co"># Changes not staged for commit:</span></span>
+<span id="cb43-7"><a href=""></a><span class="co">#  (use "git add &lt;file&gt;..." to update what will be committed)</span></span>
+<span id="cb43-8"><a href=""></a><span class="co">#  (use "git restore &lt;file&gt;..." to discard changes in working directory)</span></span>
+<span id="cb43-9"><a href=""></a><span class="co">#    modified:   data.csv</span></span>
+<span id="cb43-10"><a href=""></a><span class="co">#    modified:   README.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="working-w-github-7" class="slide level2">
+<h2>Working w/ GitHub</h2>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <code>Stage</code> changes</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/git-workflow-18.png" style="width:100.0%"></p>
+</div><div class="column" style="width:40%;">
+<p><br></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href=""></a><span class="fu">git</span> add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href=""></a><span class="fu">git</span> status</span>
+<span id="cb45-2"><a href=""></a></span>
+<span id="cb45-3"><a href=""></a><span class="co"># On branch main</span></span>
+<span id="cb45-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'</span></span>
+<span id="cb45-5"><a href=""></a><span class="co">#</span></span>
+<span id="cb45-6"><a href=""></a><span class="co"># Changes to be committed:</span></span>
+<span id="cb45-7"><a href=""></a><span class="co">#  (use "git restore --staged &lt;file&gt;..." to unstage)</span></span>
+<span id="cb45-8"><a href=""></a><span class="co">#   modified:   data.csv</span></span>
+<span id="cb45-9"><a href=""></a><span class="co">#   modified:   README.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="working-w-github-8" class="slide level2">
+<h2>Working w/ GitHub</h2>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; <code>Commit</code> changes</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/git-workflow-19.png" style="width:100.0%"></p>
+</div><div class="column" style="width:40%;">
+<p><br></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"update dataset and README"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href=""></a><span class="fu">git</span> status</span>
+<span id="cb47-2"><a href=""></a></span>
+<span id="cb47-3"><a href=""></a><span class="co"># On branch main</span></span>
+<span id="cb47-4"><a href=""></a><span class="co"># Your branch is ahead of 'origin/main' by 1 commit.</span></span>
+<span id="cb47-5"><a href=""></a><span class="co">#   (use "git push" to publish your local commits)</span></span>
+<span id="cb47-6"><a href=""></a><span class="co"># </span></span>
+<span id="cb47-7"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="working-w-github-9" class="slide level2">
+<h2>Working w/ GitHub</h2>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp; Don’t forget to <code>Push</code> changes to remote</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/git-workflow-14.png" style="width:100.0%"></p>
+</div><div class="column" style="width:40%;">
+<p><br></p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href=""></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb49-1"><a href=""></a><span class="fu">git</span> status</span>
+<span id="cb49-2"><a href=""></a></span>
+<span id="cb49-3"><a href=""></a><span class="co"># On branch main</span></span>
+<span id="cb49-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/main'.</span></span>
+<span id="cb49-5"><a href=""></a><span class="co"># </span></span>
+<span id="cb49-6"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
 <section id="help-me-i-cant-push" class="slide level2">
@@ -1414,18 +1213,18 @@
 <p>When you try to push, you might see this following error message:</p>
 <div class="columns">
 <div class="column" style="width:60%;">
-<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb62-1"><a href=""></a><span class="fu">git</span> push</span>
-<span id="cb62-2"><a href=""></a></span>
-<span id="cb62-3"><a href=""></a><span class="co"># To github.com:ahasverus/projectname.git</span></span>
-<span id="cb62-4"><a href=""></a><span class="co">#  ! [rejected]        main -&gt; main (fetch first)</span></span>
-<span id="cb62-5"><a href=""></a><span class="co">#</span></span>
-<span id="cb62-6"><a href=""></a><span class="co"># error: failed to push some refs to 'github.com:ahasverus/projectname.git'</span></span>
-<span id="cb62-7"><a href=""></a><span class="co">#</span></span>
-<span id="cb62-8"><a href=""></a><span class="co"># hint: Updates were rejected because the remote contains work that you do</span></span>
-<span id="cb62-9"><a href=""></a><span class="co"># hint: not have locally. This is usually caused by another repository pushing</span></span>
-<span id="cb62-10"><a href=""></a><span class="co"># hint: to the same ref. You may want to first integrate the remote changes</span></span>
-<span id="cb62-11"><a href=""></a><span class="co"># hint: (e.g., 'git pull ...') before pushing again.</span></span>
-<span id="cb62-12"><a href=""></a><span class="co"># hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href=""></a><span class="fu">git</span> push</span>
+<span id="cb50-2"><a href=""></a></span>
+<span id="cb50-3"><a href=""></a><span class="co"># To github.com:ahasverus/projectname.git</span></span>
+<span id="cb50-4"><a href=""></a><span class="co">#  ! [rejected]        main -&gt; main (fetch first)</span></span>
+<span id="cb50-5"><a href=""></a><span class="co">#</span></span>
+<span id="cb50-6"><a href=""></a><span class="co"># error: failed to push some refs to 'github.com:ahasverus/projectname.git'</span></span>
+<span id="cb50-7"><a href=""></a><span class="co">#</span></span>
+<span id="cb50-8"><a href=""></a><span class="co"># hint: Updates were rejected because the remote contains work that you do</span></span>
+<span id="cb50-9"><a href=""></a><span class="co"># hint: not have locally. This is usually caused by another repository pushing</span></span>
+<span id="cb50-10"><a href=""></a><span class="co"># hint: to the same ref. You may want to first integrate the remote changes</span></span>
+<span id="cb50-11"><a href=""></a><span class="co"># hint: (e.g., 'git pull ...') before pushing again.</span></span>
+<span id="cb50-12"><a href=""></a><span class="co"># hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:40%;">
 
 </div></div>
@@ -1439,119 +1238,125 @@
 <p>When you try to pull, you might see this following error message:</p>
 <div class="columns">
 <div class="column" style="width:60%;">
-<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb63-1"><a href=""></a><span class="fu">git</span> pull</span>
-<span id="cb63-2"><a href=""></a></span>
-<span id="cb63-3"><a href=""></a><span class="co"># [...]</span></span>
-<span id="cb63-4"><a href=""></a><span class="co"># Auto-merging README.md</span></span>
-<span id="cb63-5"><a href=""></a><span class="co"># CONFLICT (content): Merge conflict in README.md</span></span>
-<span id="cb63-6"><a href=""></a><span class="co">#</span></span>
-<span id="cb63-7"><a href=""></a><span class="co"># error: could not apply b8302e6... edit README</span></span>
-<span id="cb63-8"><a href=""></a><span class="co">#</span></span>
-<span id="cb63-9"><a href=""></a><span class="co"># hint: Resolve all conflicts manually, mark them as resolved with</span></span>
-<span id="cb63-10"><a href=""></a><span class="co"># hint: "git add/rm &lt;conflicted_files&gt;", then run "git rebase --continue".</span></span>
-<span id="cb63-11"><a href=""></a><span class="co"># hint: You can instead skip this commit: run "git rebase --skip".</span></span>
-<span id="cb63-12"><a href=""></a><span class="co"># hint: To abort and get back to the state before "git rebase", </span></span>
-<span id="cb63-13"><a href=""></a><span class="co"># hint: run "git rebase --abort".</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href=""></a><span class="fu">git</span> pull</span>
+<span id="cb51-2"><a href=""></a></span>
+<span id="cb51-3"><a href=""></a><span class="co"># [...]</span></span>
+<span id="cb51-4"><a href=""></a><span class="co"># Auto-merging README.md</span></span>
+<span id="cb51-5"><a href=""></a><span class="co"># CONFLICT (content): Merge conflict in README.md</span></span>
+<span id="cb51-6"><a href=""></a><span class="co">#</span></span>
+<span id="cb51-7"><a href=""></a><span class="co"># error: could not apply b8302e6... edit README</span></span>
+<span id="cb51-8"><a href=""></a><span class="co">#</span></span>
+<span id="cb51-9"><a href=""></a><span class="co"># hint: Resolve all conflicts manually, mark them as resolved with</span></span>
+<span id="cb51-10"><a href=""></a><span class="co"># hint: "git add/rm &lt;conflicted_files&gt;", then run "git rebase --continue".</span></span>
+<span id="cb51-11"><a href=""></a><span class="co"># hint: You can instead skip this commit: run "git rebase --skip".</span></span>
+<span id="cb51-12"><a href=""></a><span class="co"># hint: To abort and get back to the state before "git rebase", </span></span>
+<span id="cb51-13"><a href=""></a><span class="co"># hint: run "git rebase --abort".</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:40%;">
 
 </div></div>
 <div class="fragment">
 <p><br></p>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;Welcome to the wonderful world of <code>git</code> <strong>conflicts</strong></p>
-</div>
-</section>
-<section id="resolving-conflicts" class="slide level2">
-<h2>Resolving conflicts</h2>
-<p><strong>What is a (lexical) conflict?</strong></p>
-<p>A <code>git</code> conflict appears when two versions cannot be merged by <code>git</code> because changes have been made to the same lines.</p>
-<div class="fragment">
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><code>README.md</code> - <strong>Version A</strong></p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb64-1"><a href=""></a><span class="fu"># The SURPRISE pizza</span></span>
-<span id="cb64-2"><a href=""></a></span>
-<span id="cb64-3"><a href=""></a>An amazing surprise of the dev team dedicated just to your fancy</span>
-<span id="cb64-4"><a href=""></a>thirst for fortune and originality.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<p><code>README.md</code> - <strong>Version B</strong></p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb65-1"><a href=""></a><span class="fu"># The Surprise Pizza</span></span>
-<span id="cb65-2"><a href=""></a></span>
-<span id="cb65-3"><a href=""></a>An amazing surprise of the dev team dedicated just to your fancy</span>
-<span id="cb65-4"><a href=""></a>thirst for fortune and originality.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-</div>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<p><code>Git</code> will identify conflicts in files:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb66-1"><a href=""></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
-<span id="cb66-2"><a href=""></a><span class="fu"># The SURPRISE pizza</span></span>
-<span id="cb66-3"><a href=""></a><span class="fu">=======</span></span>
-<span id="cb66-4"><a href=""></a><span class="fu"># The Surprise Pizza</span></span>
-<span id="cb66-5"><a href=""></a><span class="at">&gt;&gt;&gt;&gt;&gt;&gt;&gt; b8302e6 (edit README)</span></span>
-<span id="cb66-6"><a href=""></a></span>
-<span id="cb66-7"><a href=""></a>An amazing surprise of the dev team dedicated just to your fancy</span>
-<span id="cb66-8"><a href=""></a>thirst for fortune and originality.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-
-</div></div>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;Welcome to the wonderful world of <code>git</code> <strong>conflicts</strong><br>
+A <code>git</code> conflict appears when two versions cannot be merged by <code>git</code> because changes have been made to the same lines.</p>
 </div>
 <div class="fragment">
 <p><br></p>
 <p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;You have to decide which version you want to keep.</p>
 </div>
 </section>
-<section id="resolving-conflicts-1" class="slide level2">
-<h2>Resolving conflicts</h2>
-<p><strong>What is a (lexical) conflict?</strong></p>
-<p>A <code>git</code> conflict appears when two versions cannot be merged by <code>git</code> because changes have been made to the same lines.</p>
+<section id="the-.gitignore" class="slide level2">
+<h2>The <code>.gitignore</code></h2>
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;We can also tell <code>git</code> to <strong>ignore specific files</strong>: it’s the purpose of the <code>.gitignore</code> file</p>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><code>README.md</code> - <strong>Version A</strong></p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb67-1"><a href=""></a><span class="fu"># The SURPRISE pizza</span></span>
-<span id="cb67-2"><a href=""></a></span>
-<span id="cb67-3"><a href=""></a>An amazing surprise of the dev team dedicated just to your fancy</span>
-<span id="cb67-4"><a href=""></a>thirst for fortune and originality.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<p><code>README.md</code> - <strong>Version B</strong></p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb68-1"><a href=""></a><span class="fu"># The Surprise Pizza</span></span>
-<span id="cb68-2"><a href=""></a></span>
-<span id="cb68-3"><a href=""></a>An amazing surprise of the dev team dedicated just to your fancy</span>
-<span id="cb68-4"><a href=""></a>thirst for fortune and originality.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<p><code>Git</code> will identify conflicts in files:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb69-1"><a href=""></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
-<span id="cb69-2"><a href=""></a><span class="fu"># The SURPRISE pizza</span></span>
-<span id="cb69-3"><a href=""></a><span class="fu">=======</span></span>
-<span id="cb69-4"><a href=""></a><span class="fu"># The Surprise Pizza</span></span>
-<span id="cb69-5"><a href=""></a><span class="at">&gt;&gt;&gt;&gt;&gt;&gt;&gt; b8302e6 (edit README)</span></span>
-<span id="cb69-6"><a href=""></a></span>
-<span id="cb69-7"><a href=""></a>An amazing surprise of the dev team dedicated just to your fancy</span>
-<span id="cb69-8"><a href=""></a>thirst for fortune and originality.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<p><br></p>
-<p><code>README.md</code> - <strong>Final version</strong></p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb70-1"><a href=""></a><span class="fu"># My wonderful pizza</span></span>
-<span id="cb70-2"><a href=""></a></span>
-<span id="cb70-3"><a href=""></a>An amazing surprise of the dev team dedicated just to your fancy</span>
-<span id="cb70-4"><a href=""></a>thirst for fortune and originality.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Which files? For instance:</p>
+<ul>
+<li>passwords, tokens and other secrets</li>
+<li>temporary files</li>
+<li>large files</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<p>The syntax is simple:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb52-1"><a href=""></a># Ignore a specific file</span>
+<span id="cb52-2"><a href=""></a>README.html</span>
+<span id="cb52-3"><a href=""></a></span>
+<span id="cb52-4"><a href=""></a># Ignore all PDF</span>
+<span id="cb52-5"><a href=""></a>*.pdf</span>
+<span id="cb52-6"><a href=""></a></span>
+<span id="cb52-7"><a href=""></a># Ignore a folder</span>
+<span id="cb52-8"><a href=""></a>data/</span>
+<span id="cb52-9"><a href=""></a></span>
+<span id="cb52-10"><a href=""></a># Ignore a subfolder</span>
+<span id="cb52-11"><a href=""></a>data/raw-data/</span>
+<span id="cb52-12"><a href=""></a></span>
+<span id="cb52-13"><a href=""></a># Ignore a specific file in a subfolder</span>
+<span id="cb52-14"><a href=""></a>data/raw-data/raw-data.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <p><br></p>
-<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;You have to decide which version you want to keep.</p>
+<div class="fragment">
+<p><i class="fa-solid fa-hand-point-right" aria-label="hand-point-right"></i> &nbsp;Template for <i class="fa-brands fa-r-project" aria-label="r-project"></i> projects available <a href="https://github.com/github/gitignore/blob/main/R.gitignore">here</a></p>
+</div>
+</section>
+<section id="github-as-a-gateway-to-open-source-projects" class="slide level2">
+<h2>Github as a gateway to open source projects</h2>
+<div class="center">
+<p><img data-src="img/git-advanced.png" style="width:100.0%"></p>
+</div>
+<p>You can access millions of open source projects and contribute to their development.</p>
+<p>And if your Github repository is public, everyone can use and contribute to your project.</p>
+<ul>
+<li><strong>Fork</strong> existing project : create an independent copy of a repository</li>
+<li><strong>Pull request</strong> : to contribute to the development of a repository</li>
+<li><strong>Merge branches</strong> : accept development from other branches</li>
+</ul>
+</section>
+<section id="github-as-a-social-platform" class="slide level2">
+<h2>Github as a social platform</h2>
+<div class="center">
+<p><img data-src="img/git-advanced.png" style="width:100.0%"></p>
+</div>
+<ul>
+<li><strong>Watch</strong>/<strong>Star</strong> existing repository or <strong>Follow</strong> colleagues/developers<br>
+</li>
+<li><strong>Issues</strong> : anyone can fill an issue
+<ul>
+<li>good for keeping track of the todo list and future development</li>
+<li>issue can be attributed to someone, and categorized</li>
+<li>awesome tool to receive feedback from ‘users’ / colleagues</li>
+</ul></li>
+<li><strong>Wiki</strong> and <strong>ReadMe</strong> : help to organize the documentation of your code</li>
+</ul>
+</section>
+<section id="take-home-message" class="slide level2">
+<h2>Take home message</h2>
+<p><br> <br></p>
+<div>
+<ul>
+<li class="fragment">Git and Github are IT tools made to help you with the software development of your ecological data analysis. <br><br></li>
+<li class="fragment">Key git/Github commands to remember:</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="center">
+<p><strong>pull</strong><br>
+stage and <strong>commit</strong><br>
+<strong>push</strong></p>
+</div>
+</div>
+<div class="fragment">
+<p><br> <br></p>
+<p>Many resources online.<br>
+Please contact me if you have any issue using Git/Github: <a href="mailto:romain.frelat@fondationbiodiversite.fr"><i class="fa-solid fa-envelope" aria-label="envelope"></i> romain.frelat@fondationbiodiversite.fr</a></p>
 
+</div>
 </section></section>
 
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/cesab-logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><i class="fa-brands fa-github" aria-label="github"></i> &nbsp;<a href="https://github.com/frbcesab/intro-git" class="uri">https://github.com/frbcesab/intro-git</a></p>
+<p><i class="fa-brands fa-github" aria-label="github"></i> &nbsp;<a href="https://rdatatoolbox.github.io/"><code>Reproducible Research</code></a> &nbsp; • &nbsp; <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> &nbsp;<a href="https://creativecommons.org/licenses/by/4.0/deed.en"><code>cc-by-4.0</code></a></p>
 </div>
 </div></div>
 
