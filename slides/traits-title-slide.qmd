@@ -31,14 +31,19 @@ invisible(Sys.setlocale("LC_TIME", olocale))
 
 :::: {.columns}
 
-::: {.column .author width="45%"}
+::: {.column .author width="32%"}
 Romain Frelat<br/>
-[{{< fa paper-plane >}}](mailto:romain.frelat@fondationbiodiversite.fr)
-[{{< fa brands github >}}](https://github.com/rfrelat)
-
-::: {.affiliation}
-{{< fa house >}} &nbsp;[FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/)
+{{< fa briefcase >}} &nbsp;FRB-CESAB
 :::
+
+::: {.column .author width="32%"}
+Karim Barkaoui<br/>
+{{< fa briefcase >}} &nbsp;CIRAD
+:::
+
+::: {.column .author width="32%"}
+Elena Kazakou<br/>
+{{< fa briefcase >}} &nbsp;CNRS
 :::
 
 ::::

@@ -71,7 +71,7 @@ Please cite these presentations as:
 
 > Frelat R and Casajus N (2025) Version control with git and GitHub. URL: <https://fellow-flora.github.io/intro-git.html>.  
 
-> Frelat R (2025) Traits database - quick update and way forward. URL: <https://fellow-flora.github.io/fellow-traits.html>.  
+> Frelat R, Barkaoui K, and Kazakou E (2025) Traits database - quick update and way forward. URL: <https://fellow-flora.github.io/fellow-traits.html>.  
 
 > Frelat R, Coux C, and Casajus N (2025) Environment databases frequently used in biodiversity research. URL: <https://fellow-flora.github.io/env-data.html>.  
 

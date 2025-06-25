@@ -2,7 +2,7 @@
 
 ::::{ .columns}
 :::{ .column width="50%" align="left"}
-![Files in fellow-traits/data/raw-data/species-list](img/species-list.png){height=500}
+![Files in fellow-traits/data/raw-data/species-list](img/species-list-new.png){height=500}
 :::
 :::{ .column width="50%" .fragment}
 <br><br>
@@ -17,7 +17,7 @@
   - remove taxa that are coarser than family: *Dicotyledonae*, *Bryophyta*
 
 
-> Number of unique taxa: 1884  
+> Number of unique taxa: 2286  
 :::
 ::::
 
@@ -33,10 +33,10 @@
 - [TaxRef v18](https://inpn.mnhn.fr/telechargement/referentielEspece/taxref/18.0/menu) 
 - if not available, [GBIF](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) (based on Catalogue of Life) 
 
-> Taxa with no exact match in Taxref: 97  
-> Taxa not found in Taxref with fuzzy matching: 43  
-> Taxa not found in GBIF: 1 (*Ornithogalum muscari*)  
-> Number of accepted taxa: 1706
+> Taxa with no exact match in Taxref: 112  
+> Taxa not found in Taxref with fuzzy matching: 51  
+> Taxa not found in GBIF: 4 (*Anisantha bromus*, *Festuca schedonorus*, *Ornithogalum muscari*, *Picris helminthotheca*)  
+> Number of accepted taxa: 2027
 
 ```{r}
 #| echo: false
@@ -46,7 +46,7 @@ df <- read.csv(paste0(url, short))
 
 # table(df$taxref_status)
 # remove missing accepted_taxa
-df <- df[!is.na(df$accepted_taxa), ]
+df <- df[!is.na(df$accepted_taxa) & !is.na(df$accepted_rank), ]
 short_df <- df[, c("accepted_taxa", "full_name", "accepted_rank")]
 short_df <- short_df[!duplicated(short_df), ]
 short_df <- short_df[complete.cases(short_df), ]
@@ -58,7 +58,7 @@ table(short_df$accepted_rank)
 
 **Synonyms**  
 
-[43k known synonyms](https://github.com/FELLOW-flora/fellow-traits/raw/refs/heads/main/data/derived-data/species_known_synonyms.csv) were retrieve from   
+[46k known synonyms](https://github.com/FELLOW-flora/fellow-traits/raw/refs/heads/main/data/derived-data/species_known_synonyms.csv) were retrieve from   
 original species list, TaxRef and GBIF.  
 :::
 
@@ -86,9 +86,10 @@ nsp_db <- apply(dbpersp, 2, sum)
 ndb <- apply(dbpersp, 1, sum)
 
 # divide between specialist species and generalist ones
+th_gen <- max(ndb) / 2
 sp_class <- cut(
   ndb,
-  breaks = c(0, 1, 8, max(ndb)),
+  breaks = c(0, 1, th_gen, max(ndb)),
   labels = c("specialist", "other", "generalist")
 )
 
@@ -96,7 +97,7 @@ table(sp_class)
 sum_gen <- as.matrix(rowsum(dbpersp, sp_class))
 colnames(sum_gen) <- gsub("^in_", "", colnames(sum_gen))
 
-par(mar = c(4, 8, 1, 1), cex = 1.5)
+par(mar = c(4, 10, 1, 1), cex = 1.5)
 barplot(
   sum_gen,
   horiz = TRUE,
@@ -118,7 +119,7 @@ legend(
 
 ## Trait databases
 
-![Metadata in [fellow-traits/data/raw-data/traits/Metatraits.xlsx](https://github.com/FELLOW-flora/fellow-traits/raw/refs/heads/main/data/raw-data/traits/Metatraits.xlsx)](img/trait-db.png){height=500}
+![Metadata in [fellow-traits/data/raw-data/traits/Metatraits.xlsx](https://github.com/FELLOW-flora/fellow-traits/raw/refs/heads/main/data/raw-data/traits/Metatraits.xlsx)](img/trait-db-new.png){height=500}
 
 
 ## Trait coverage per database
@@ -195,7 +196,7 @@ rect(18.3, 1.5, 500, 4.5, lwd = 5, border = "darkgreen")
 
 ```{r narank}
 # barplot(t(table(sp_na, taxolist$gbif_rank)), border = NA)
-bks <- seq(10, 120, by = 10)
+bks <- seq(0, 120, by = 10)
 df <- data.frame(
   "cat" = cut(sp_na, breaks = bks, include.lowest = TRUE),
   "rank" = short_df$accepted_rank
@@ -205,7 +206,7 @@ par(mar = c(4, 4, 1, 1))
 barx <- barplot(
   tdf,
   col = hcl.colors(5, "viridis"),
-  names = rep("", 11),
+  names = rep("", 12),
   xlab = "Number of missing traits",
   ylab = "Number of species"
 )
@@ -217,7 +218,7 @@ legend("topright", legend = row.names(tdf), fill = hcl.colors(5, "viridis"))
 :::
 
 :::{ .column width="25%" .fragment}
-<br><br><br>
+
 Taxa with no trait information.
 
 ```{r nodata}
@@ -244,18 +245,18 @@ plot(
   ylab = "Number of missing traits"
 )
 # add cosmetics
-abline(v = c(1.5, 8.5), lwd = 2)
+abline(v = c(1.5, th_gen), lwd = 2)
 segments(
-  c(par()$usr[1], 1.5, 8.5),
+  c(par()$usr[1], 1.5, th_gen),
   par()$usr[3],
-  c(1.5, 8.5, par()$usr[2]),
+  c(1.5, th_gen, par()$usr[2]),
   par()$usr[3],
   col = RColorBrewer::brewer.pal(3, "Set3"),
   lwd = 5,
   xpd = NA
 )
 mtext(
-  at = c(0.5, 13),
+  at = c(0.5, 17.5),
   side = 1,
   line = 0.5,
   text = c("Specialists", "Generalists"),
