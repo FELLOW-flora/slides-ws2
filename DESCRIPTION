@@ -1,22 +1,24 @@
-Package: intro-git
+Package: slides-ws2
 Type: Package
-Title: Version Control with Git & GitHub
+Title: Slides for FELLOW workshop 2
 Version: 0.0.1
 Authors@R: c(
-    person(given   = "Nicolas",
-           family  = "Casajus",
-           role    = c("aut", "cre", "cph"),
-           email   = "nicolas.casajus@fondationbiodiversite.fr",
-           comment = c(ORCID = "0000-0002-5537-5294")))
-Description: A gentle introduction to version control with git & GitHub. Slides
-    are built with 'Quarto'.
-URL: https://github.com/frbcesab/intro-git
-BugReports: https://github.com/frbcesab/intro-git/issues
+    person(given   = "Romain",
+           family  = "Frelat",
+           role    = c("aut"),
+           email   = "rom.frelat@gmail.com",
+           comment = c(ORCID = "0000-0002-8631-4398")))
+Description: Three online presentations for workshop 2 of FRB-CESAB group 'FELLOW'.
+URL: https://github.com/FELLOW-flora/slides-ws2
+BugReports: https://github.com/FELLOW-flora/slides-ws2/issues
 License: CC BY 4.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
 SystemRequirements: Quarto CLI
-Suggests: 
+Imports: 
+    DT,
     knitr,
-    quarto
+    quarto,
+    RColorBrewer,
+    rmarkdown
