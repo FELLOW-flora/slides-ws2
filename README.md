@@ -78,4 +78,4 @@ Please cite these presentations as:
 
 ## See also
 
-Discover the other training courses provided by the FRB-CESAB and its partners: <https://frbcesab.github.io/training-courses/>
+Discover the other training courses provided by the FRB-CESAB and its partners: <https://frbcesab.github.io/content/courses.html>

@@ -85,8 +85,9 @@ nsp_db <- apply(dbpersp, 2, sum)
 # count the number of species per database
 ndb <- apply(dbpersp, 1, sum)
 
-# divide between specialist species and generalist ones
-th_gen <- max(ndb) / 2
+# split species between specialists and generalists
+th_gen <- floor(length(col_db) / 2) # or max(ndb) / 2
+
 sp_class <- cut(
   ndb,
   breaks = c(0, 1, th_gen, max(ndb)),
@@ -103,7 +104,8 @@ barplot(
   horiz = TRUE,
   las = 1,
   xlab = "Number of species",
-  col = RColorBrewer::brewer.pal(3, "Set3")
+  col = RColorBrewer::brewer.pal(3, "Set3"),
+  cex.names = 0.8
 )
 legend(
   "topright",
@@ -245,18 +247,18 @@ plot(
   ylab = "Number of missing traits"
 )
 # add cosmetics
-abline(v = c(1.5, th_gen), lwd = 2)
+abline(v = c(1.5, th_gen + 0.5), lwd = 2)
 segments(
-  c(par()$usr[1], 1.5, th_gen),
+  c(par()$usr[1], 1.5, th_gen + 0.5),
   par()$usr[3],
-  c(1.5, th_gen, par()$usr[2]),
+  c(1.5, th_gen + 0.5, par()$usr[2]),
   par()$usr[3],
   col = RColorBrewer::brewer.pal(3, "Set3"),
   lwd = 5,
   xpd = NA
 )
 mtext(
-  at = c(0.5, 17.5),
+  at = c(0.5, th_gen * 1.5),
   side = 1,
   line = 0.5,
   text = c("Specialists", "Generalists"),

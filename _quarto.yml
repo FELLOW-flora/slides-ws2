@@ -9,7 +9,7 @@ project:
     - "env-data.qmd"
 
 execute: 
-  freeze: auto
+  freeze: false
 
 website:
   title: "FRB-CESAB Fellow workshop 2"
