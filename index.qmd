@@ -47,7 +47,7 @@ Three online presentations for workshop 2 of FRB-CESAB group [FELLOW](https://ww
 
 <h1 align="center">
   <br>
-  <a href="https://fellow-flora.github.io/slides-ws2/env-data.html/"><img src="img/logo-dataenv-title.png" alt="Env" width="200"></a>
+  <a href="https://fellow-flora.github.io/slides-ws2/env-data.html"><img src="img/logo-dataenv-title.png" alt="Env" width="200"></a>
   <br>Environment databases<br>
 </h1>
 
