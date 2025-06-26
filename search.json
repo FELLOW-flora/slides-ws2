@@ -1,0 +1,583 @@
+[
+  {
+    "objectID": "env-data.html#setting-the-stage",
+    "href": "env-data.html#setting-the-stage",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Setting the stage",
+    "text": "Setting the stage\nObjective:\n\nYou want to add information not measured in the field to your data\nand you have collected the GPS coordinates (and you know the projection system) 👍\n\n\nIssues:\n\nMany sources: satellite, re-analysis, models, …\nMany providers: Copernicus, IGN, NOAA, …\nMany disciplines: climate, soil, hydrology, remote sensing, social sciences\nFast evolving field, many newly released datasets, hard to keep track of updates\n\n\n\nQuestions to ask:\n\nWhat data do I need to answer my research question?\n\nDefine the spatial extent and resolution\n\nDefine temporal extent and resolution"
+  },
+  {
+    "objectID": "env-data.html#spatial-extent",
+    "href": "env-data.html#spatial-extent",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Spatial extent",
+    "text": "Spatial extent\n \n\n\nFrance \n\nIGN\ndata.gouv.fr\nSandre \n\n\nEurope \n\nCopernicus: land, climate, marine\nEU JRC\nEU Env. Agency\ndata.europa.eu\n\n\nWorld \n\nEarthEnv(terrestrial, 1km)\nBio-Oracle(marine, 0.05°)\n\n\n\nGoogle Earth Engine\nOpenLandMap\nR package Geodata"
+  },
+  {
+    "objectID": "env-data.html#topics",
+    "href": "env-data.html#topics",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Topics",
+    "text": "Topics\n\n\nClimate\n\nWorldClim\nChelsa\nERA5 (reanalysis, World)\nE-OBS (observation, Europe)\n\n\nLand cover\n\nCorine LC\nESA WorldCover\nESA Climate Change Initiative\nGLFC_FCS30D\n\n\nSoil\n\nISRIC Soil Grids (250m)\nFAO Harmonized World Soil Database (HWSD)(1km)\nEuropean Soil Database (ESDAC)\nBDGSF (France)\n\n\n\n\n\nElevation and bathymetry\n\nCopernicus DEM GLO 30\n\nSRTM\n\nGEBCO\nOpenTopography\n\n\nBiomes and Ecoregions\n\nFAO Global Agro-Ecological Zones\nKoppen-Geiger climate maps\nCopernicus Global Biomes\nWWF Ecoregions Terrestrial and Marine\n\n\nPopulation density\n\nWorldPop\nNASA Gridded Population of the World (GPW)\nJRC Global Human Settlement"
+  },
+  {
+    "objectID": "env-data.html#gis-tools",
+    "href": "env-data.html#gis-tools",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "GIS tools",
+    "text": "GIS tools\nGood news: you can do all your analysis in .\n\n\nRecommended tutorials:\n\nSpatial data science with R and terra\nSpatial Data Science with application in R (sf and stars)\nSpatial Statistics for Data Science: Theory and Practice with R\n\n\n\nOther tools:\n\nGoogle Earth Engine  Good alternative to avoid downloading large data and make use of Google computation power (for academics only)\n\nQuantum GIS  Open source alternative to ArcGIS. Dedicated GIS tool, helpful to create professional maps\n\n\n\nPlease contact me if you have any questions :  romain.frelat@fondationbiodiversite.fr"
+  },
+  {
+    "objectID": "intro-git.html#what-is-reproducibility",
+    "href": "intro-git.html#what-is-reproducibility",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "What is reproducibility?",
+    "text": "What is reproducibility?\n\n\n\n\n\nSource: https://eliocamp.github.io\n\n\nReproducibility is about results that can be obtained by someone else (or you in the future) given the same data and the same code. This is a technical problem.\n\n  We talk about Computational reproducibility"
+  },
+  {
+    "objectID": "intro-git.html#reproducibility-spectrum",
+    "href": "intro-git.html#reproducibility-spectrum",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Reproducibility spectrum",
+    "text": "Reproducibility spectrum\n\n\n\n\nSource: Peng (2011)[^peng]\n\n\n\n\nEach degree of reproducibility requires additional skills and time. While some of those skills (e.g. literal programming, version control, setting up environments) pay off in the long run, they can require a high up-front investment."
+  },
+  {
+    "objectID": "intro-git.html#concepts",
+    "href": "intro-git.html#concepts",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Concepts",
+    "text": "Concepts\nAccording to Wilson et al. (2017)1, good practices for a better reproducibility can be organized into the following six topics:\n  \n\n\n  Data management\n\n  Project organization\n\n  Tracking changes\n\n\n\n\n  Collaboration\n\n  Manuscript\n\n  Code & Software\n\nhttps://doi.org/10.1371/journal.pcbi.1005510"
+  },
+  {
+    "objectID": "intro-git.html#motivations",
+    "href": "intro-git.html#motivations",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Motivations",
+    "text": "Motivations\n\n\n\n\n\nProject content (without git)\n\n\n\nQuestions\n\nWhich version of analyses.R is the final one?\nWhat about data.csv?\nWhat are the differences between versions?\nWho have contributed to these versions? When?\n\n\n\n  We need a tool that deals with versions for us"
+  },
+  {
+    "objectID": "intro-git.html#motivations-1",
+    "href": "intro-git.html#motivations-1",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Motivations",
+    "text": "Motivations\n\n\n\n\n\n\n\n\n\n\nProject content (without git)\n\n\n\n\n\n\nProject content (with git)"
+  },
+  {
+    "objectID": "intro-git.html#presentation-of-git",
+    "href": "intro-git.html#presentation-of-git",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Presentation of git",
+    "text": "Presentation of git\ngit is a Version Control System (VCS)."
+  },
+  {
+    "objectID": "intro-git.html#presentation-of-git-1",
+    "href": "intro-git.html#presentation-of-git-1",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Presentation of git",
+    "text": "Presentation of git\ngit is a Version Control System (VCS). With git you can:\n\n\n\nkeep your working copy clean\nmake contributions transparent (what | who | when | why)\nkeep the entire history of a file (and project)\ninspect a file throughout its life time\nrevert back to a previous version\nhandle multiple versions (branches)\nfacilitate collaborations w/ code hosting platforms (GitHub, GitLab, Bitbucket, etc.)\nbackup your project"
+  },
+  {
+    "objectID": "intro-git.html#a-word-of-warning",
+    "href": "intro-git.html#a-word-of-warning",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "A word of warning",
+    "text": "A word of warning\ngit and GitHub are not the same thing\n\ngit is a free and open-source software\nGitHub (and co) is a web platform to host and share projects tracked by git\n\n\n\nIn other words:\n\nYou do not need GitHub to use git but you cannot use GitHub without using git"
+  },
+  {
+    "objectID": "intro-git.html#git-as-a-cli",
+    "href": "intro-git.html#git-as-a-cli",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "git as a CLI",
+    "text": "git as a CLI\n\n\n\n\n\n\nGit is a command-line interface (CLI)\nYou interact with git using a terminal\nAll commands start w/ the keyword git (git status / log / add / commit)\n\n\n\n  But a lot of third-party tools provides a graphical interface to git (e.g. RStudio, GitKraken, GitHub Desktop, extensions for VSCode, VSCodium, neovim, etc.)\n\n\nJust keep in mind that for some operations you will need to use the terminal"
+  },
+  {
+    "objectID": "intro-git.html#rstudio-and-git",
+    "href": "intro-git.html#rstudio-and-git",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "RStudio and git",
+    "text": "RStudio and git\n\n\nGit main panel"
+  },
+  {
+    "objectID": "intro-git.html#rstudio-and-git-1",
+    "href": "intro-git.html#rstudio-and-git-1",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "RStudio and git",
+    "text": "RStudio and git\n\n\nStage files, view differences and commit changes\n\n\nView history and versions"
+  },
+  {
+    "objectID": "intro-git.html#installation-and-configuration",
+    "href": "intro-git.html#installation-and-configuration",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Installation and configuration",
+    "text": "Installation and configuration\nCheck out and follow the tutorial from N. Casajus, 2024, Setting up R: https://frbcesab.github.io/rsetup/."
+  },
+  {
+    "objectID": "intro-git.html#how-does-git-work",
+    "href": "intro-git.html#how-does-git-work",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "How does git work?",
+    "text": "How does git work?\n\ngit takes a sequence of snapshots\nEach snapshot can contain changes for one or many file(s)\nUser chooses which files to ‘save’ in a snapshot and when (!= file hosting services like Dropbox, Google Drive, etc.)\n\n\n\n  In the git universe, a snapshot is a version, i.e. the state of the whole project at a specific point in time\n\n\n\nA snapshot is a two-step process:\n\nStage files: select which files to add to the version\nCommit changes: save the version and add metadata (commit message)"
+  },
+  {
+    "objectID": "intro-git.html#basic-workflow",
+    "href": "intro-git.html#basic-workflow",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Basic workflow",
+    "text": "Basic workflow\n  Initialize git in a (empty) folder (repository)\n\n\n\n\n\ngit init\n\nThe three areas of a git repository:\n\nworking copy: current state of the directory (what you actually see)\nstaging area: selected files that will be added to the next version\nrepository: area w/ all the versions(the .git/ subdirectory)"
+  },
+  {
+    "objectID": "intro-git.html#basic-workflow-1",
+    "href": "intro-git.html#basic-workflow-1",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Basic workflow",
+    "text": "Basic workflow\n  Add new files in the repository\n\n\n\n\n\ngit status\n\n# On branch main\n# \n# No commits yet\n# \n# Untracked files:\n#   README.md\n#   analyses.R\n#   data.csv\n# \n# Nothing added to commit but untracked files present\n# Use \"git add &lt;file&gt;...\" to track"
+  },
+  {
+    "objectID": "intro-git.html#basic-workflow-2",
+    "href": "intro-git.html#basic-workflow-2",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Basic workflow",
+    "text": "Basic workflow\n  Stage (select) one file\n\n\n\n\n\ngit add data.csv\n\ngit status\n\n# On branch main\n# \n# No commits yet\n# \n# Changes to be committed:\n#   (use \"git rm --cached &lt;file&gt;...\" to unstage)\n#   new file:   data.csv\n# \n# Untracked files:\n#   (use \"git add &lt;file&gt;...\" to track)\n#   README.md\n#   analyses.R"
+  },
+  {
+    "objectID": "intro-git.html#basic-workflow-3",
+    "href": "intro-git.html#basic-workflow-3",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Basic workflow",
+    "text": "Basic workflow\n  Stage (select) several files\n\n\n\n\n\ngit add data.csv analyses.R\n\ngit status\n\n# On branch main\n# \n# No commits yet\n# \n# Changes to be committed:\n#   (use \"git rm --cached &lt;file&gt;...\" to unstage)\n#   new file:   analyses.R\n#   new file:   data.csv\n# \n# Untracked files:\n#   (use \"git add &lt;file&gt;...\" to track)\n#   README.md"
+  },
+  {
+    "objectID": "intro-git.html#basic-workflow-4",
+    "href": "intro-git.html#basic-workflow-4",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Basic workflow",
+    "text": "Basic workflow\n  Stage (select) all files\n\n\n\n\n\ngit add .\n\ngit status\n\n# On branch main\n# \n# No commits yet\n# \n# Changes to be committed:\n#   (use \"git rm --cached &lt;file&gt;...\" to unstage)\n#   new file:   analyses.R\n#   new file:   data.csv\n#   new file:   README.md"
+  },
+  {
+    "objectID": "intro-git.html#basic-workflow-5",
+    "href": "intro-git.html#basic-workflow-5",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Basic workflow",
+    "text": "Basic workflow\n  Commit changes to create a new version\n\n\n\n\n\ngit commit -m \"a good commit message\""
+  },
+  {
+    "objectID": "intro-git.html#basic-workflow-6",
+    "href": "intro-git.html#basic-workflow-6",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Basic workflow",
+    "text": "Basic workflow\n  Now we are up-to-date\n\n\n\n\n\ngit status\n\n# On branch main\n# nothing to commit, working tree clean"
+  },
+  {
+    "objectID": "intro-git.html#commits",
+    "href": "intro-git.html#commits",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Commits",
+    "text": "Commits\n\n\nWhen committing a new version (w/ git commit), the following information must be added:\n\nWHO - the person who has made the changes (automatically added by git)\nWHEN - the date of the commit (automatically added by git)\nWHAT - the files that have been modified (selected by the user w/ git add)\nWHY - the reason of the commit, i.e. what has been done compared to the previous version (added by the user w/ git commit)\n\n\nA commit message has a title line, and an optional body\n# Commit message w/ title\ngit commit -m \"title\"\n\nWhat is a good commit message?\nA good commit title:\n\nshould be short (less than 50 characters)\nshould be informative and unambiguous\nshould use active voice and present tense\n\n\n\n\n\n\n\n# Print git history\ngit log --oneline\n\n# f960dd3 (HEAD -&gt; main) add data cleaning script\n# dd4472c update data.csv\n# 2bb9bb4 add README.md\n# 2d79e7e first commit"
+  },
+  {
+    "objectID": "intro-git.html#when-should-you-commit",
+    "href": "intro-git.html#when-should-you-commit",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "When should you commit?",
+    "text": "When should you commit?\n\n\n\n\n\n\nCommit a new version when you reach a milestone\nCreate small and atomic commits\nCommit a state that is actually working"
+  },
+  {
+    "objectID": "intro-git.html#undoing-things",
+    "href": "intro-git.html#undoing-things",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Undoing things",
+    "text": "Undoing things\n   1. Undo recent, uncommitted and unstaged changes\nYou have modified a file but have not staged changes and you want to restore the previous version\n\n\n\n\n\n\ngit status\n\n# On branch main\n# Changes not staged for commit:\n#   (use \"git add &lt;file&gt;...\" to stage changes)\n#   (use \"git restore &lt;file&gt;...\" to discard changes)\n#   modified:   data.csv\n#\n# No changes added to commit"
+  },
+  {
+    "objectID": "intro-git.html#undoing-things-1",
+    "href": "intro-git.html#undoing-things-1",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Undoing things",
+    "text": "Undoing things\n   1. Undo recent, uncommitted and unstaged changes\nYou have modified a file but have not staged changes and you want to restore the previous version\n\n\n\n\n\n# Restore one file (discard unstaged changes)\ngit restore data.csv\n\ngit status\n\n# On branch main\n# Nothing to commit, working tree clean"
+  },
+  {
+    "objectID": "intro-git.html#undoing-things-2",
+    "href": "intro-git.html#undoing-things-2",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Undoing things",
+    "text": "Undoing things\n   1. Undo recent, uncommitted and unstaged changes\nYou have modified a file but have not staged changes and you want to restore the previous version\n\n\n\n\n\n# Restore one file (discard unstaged changes)\ngit restore data.csv\n\ngit status\n\n# On branch main\n# Nothing to commit, working tree clean\n\n  To discard all changes:\n# Cancel all non-staged changes\ngit restore ."
+  },
+  {
+    "objectID": "intro-git.html#undoing-things-3",
+    "href": "intro-git.html#undoing-things-3",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Undoing things",
+    "text": "Undoing things\n   2. Unstaged uncommitted files\nYou have modified and staged file(s) but have not committed changes yet and you want to unstage file(s) and restore the previous version\n\n\n\n\n\n\ngit status\n\n# On branch main\n# Changes to be committed:\n#   (use \"git restore --staged &lt;file&gt;...\" to unstage)\n#   modified:   data.csv"
+  },
+  {
+    "objectID": "intro-git.html#undoing-things-4",
+    "href": "intro-git.html#undoing-things-4",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Undoing things",
+    "text": "Undoing things\n   2. Unstaged uncommitted files\nYou have modified and staged file(s) but have not committed changes yet and you want to unstage file(s) and restore the previous version\n\n\n\n\n\n# Unstage one file\ngit restore --staged data.csv\n\ngit status\n\n# On branch main\n# Changes not staged for commit:\n#   (use \"git add &lt;file&gt;...\" to stage changes)\n#   (use \"git restore &lt;file&gt;...\" to discard changes)\n#   modified:   data.csv\n#\n# No changes added to commit"
+  },
+  {
+    "objectID": "intro-git.html#undoing-things-5",
+    "href": "intro-git.html#undoing-things-5",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Undoing things",
+    "text": "Undoing things\n   2. Unstaged uncommitted files\nYou have modified and staged file(s) but have not committed changes yet and you want to unstage file(s) and restore the previous version\n\n\n\n\n\n# Unstage one file\ngit restore --staged data.csv\n\ngit status\n\n# On branch main\n# Changes not staged for commit:\n#   (use \"git add &lt;file&gt;...\" to stage changes)\n#   (use \"git restore &lt;file&gt;...\" to discard changes)\n#   modified:   data.csv\n#\n# No changes added to commit\n\nYou can now restore the previous version w/:\n# Discard changes (restore previous version)\ngit restore data.csv"
+  },
+  {
+    "objectID": "intro-git.html#undoing-things-6",
+    "href": "intro-git.html#undoing-things-6",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Undoing things",
+    "text": "Undoing things\n   3. Revert one commit\nYou want to reverse the effects of a commit: use git revert\n\n\n\n\n# Print git history\ngit log --oneline\n\n# f960dd3 (HEAD -&gt; main) commit 4\n# dd4472c commit 3\n# 2bb9bb4 commit 2\n# 2d79e7e commit 1"
+  },
+  {
+    "objectID": "intro-git.html#undoing-things-7",
+    "href": "intro-git.html#undoing-things-7",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Undoing things",
+    "text": "Undoing things\n   3. Revert one commit\nYou want to reverse the effects of a commit: use git revert\n\n\n\n# Print git history\ngit log --oneline\n\n# f960dd3 (HEAD -&gt; main) commit 4\n# dd4472c commit 3\n# 2bb9bb4 commit 2\n# 2d79e7e commit 1\n\n# Revert commit dd4472c\ngit revert dd4472c"
+  },
+  {
+    "objectID": "intro-git.html#undoing-things-8",
+    "href": "intro-git.html#undoing-things-8",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Undoing things",
+    "text": "Undoing things\n   3. Revert one commit\nYou want to reverse the effects of a commit: use git revert\n\n\n\n# Print git history\ngit log --oneline\n\n# f960dd3 (HEAD -&gt; main) commit 4\n# dd4472c commit 3\n# 2bb9bb4 commit 2\n# 2d79e7e commit 1\n\n# Revert commit dd4472c\ngit revert dd4472c\n\n# Print git history\ngit log --oneline\n\n# d62ad3e (HEAD -&gt; main) Revert \"commit 3\"\n# f960dd3 commit 4\n# dd4472c commit 3\n# 2bb9bb4 commit 2\n# 2d79e7e commit 1\n\n\n\ngit revert does not alter the history and creates a new commit"
+  },
+  {
+    "objectID": "intro-git.html#undoing-things-9",
+    "href": "intro-git.html#undoing-things-9",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Undoing things",
+    "text": "Undoing things\n   4. Deleting commits\nYou want to delete one or more commits: use git reset --hard\n\n\n\n# Print git history\ngit log --oneline\n\n# f960dd3 (HEAD -&gt; main) commit 4\n# dd4472c commit 3\n# 2bb9bb4 commit 2\n# 2d79e7e commit 1\n\n# Delete the two more recent commits\ngit reset --hard 2bb9bb4\n\n\n\n\n\n\n# Print git history\ngit log --oneline\n\n# 2bb9bb4 (HEAD -&gt; main) commit 2\n# 2d79e7e commit 1\n\n\n\n\ngit reset --hard alters the history. Be careful with this command"
+  },
+  {
+    "objectID": "intro-git.html#code-hosting-platforms",
+    "href": "intro-git.html#code-hosting-platforms",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Code hosting platforms",
+    "text": "Code hosting platforms\n\n\nGitHub and co are cloud-based git repository hosting services\n   Perfect solutions to collaborate on projects tracked by git\n\nServices\n\nFull integration of version control (commits, history, differences)\nEasy collaboration w/ branches, forks, pull requests\nIssues tracking system\nEnhanced documentation rendering (README, Wiki)\n\n\n \nGitHub \n \nBitBucket\n\n \nGitLab \n \nSourceForge"
+  },
+  {
+    "objectID": "intro-git.html#presentation-of-github",
+    "href": "intro-git.html#presentation-of-github",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Presentation of GitHub",
+    "text": "Presentation of GitHub\n\n\nOverview\n\nCreated in 2008\nFor-profit company (property of Microsoft since 2018)\nUsed by more than 100 million developers around the world\n\n\nAdvantages\n\nUser-friendly interface for git\nFree account w/ unlimited public/private repositories\nOrganization account (w/ free plan)\nAdvanced tools for collaboration\nStatic website hosting"
+  },
+  {
+    "objectID": "intro-git.html#github---account-homepage",
+    "href": "intro-git.html#github---account-homepage",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "GitHub - Account homepage",
+    "text": "GitHub - Account homepage\n\n\n\n\nSource: https://github.com/ahasverus"
+  },
+  {
+    "objectID": "intro-git.html#github---organization-homepage",
+    "href": "intro-git.html#github---organization-homepage",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "GitHub - Organization homepage",
+    "text": "GitHub - Organization homepage\n\n\n\n\nSource: https://github.com/FELLOW-flora"
+  },
+  {
+    "objectID": "intro-git.html#github---repository-homepage",
+    "href": "intro-git.html#github---repository-homepage",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "GitHub - Repository homepage",
+    "text": "GitHub - Repository homepage\n\n\n\n\nSource: https://github.com/FELLOW-flora/fellow-traits"
+  },
+  {
+    "objectID": "intro-git.html#create-a-repository",
+    "href": "intro-git.html#create-a-repository",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Create a repository",
+    "text": "Create a repository"
+  },
+  {
+    "objectID": "intro-git.html#create-a-repository-1",
+    "href": "intro-git.html#create-a-repository-1",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Create a repository",
+    "text": "Create a repository"
+  },
+  {
+    "objectID": "intro-git.html#create-a-repository-2",
+    "href": "intro-git.html#create-a-repository-2",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Create a repository",
+    "text": "Create a repository"
+  },
+  {
+    "objectID": "intro-git.html#get-the-url-to-clone",
+    "href": "intro-git.html#get-the-url-to-clone",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Get the URL to clone",
+    "text": "Get the URL to clone"
+  },
+  {
+    "objectID": "intro-git.html#clone-a-repository-w-rstudio",
+    "href": "intro-git.html#clone-a-repository-w-rstudio",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Clone a repository w/ RStudio",
+    "text": "Clone a repository w/ RStudio\n\n\n\n\n\n\nSelect Version Control\n\n\n\n\n\n\nSelect Git\n\n\n\n\n\n\nCopy the URL and fill all the fields"
+  },
+  {
+    "objectID": "intro-git.html#local-copy-of-a-repository",
+    "href": "intro-git.html#local-copy-of-a-repository",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Local copy of a repository",
+    "text": "Local copy of a repository"
+  },
+  {
+    "objectID": "intro-git.html#working-w-github",
+    "href": "intro-git.html#working-w-github",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Working w/ GitHub",
+    "text": "Working w/ GitHub\n  Add a new file: README.md\n\n\n\n\n\ngit status\n\n# On branch main\n# Your branch is up to date with 'origin/main'\n#\n# Untracked files:\n#   README.md\n# \n# Nothing added to commit but untracked files present\n# Use \"git add &lt;file&gt;...\" to track"
+  },
+  {
+    "objectID": "intro-git.html#working-w-github-1",
+    "href": "intro-git.html#working-w-github-1",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Working w/ GitHub",
+    "text": "Working w/ GitHub\n  Stage changes\n\n\n\n\n\ngit add .\n\ngit status\n\n# On branch main\n# Your branch is up to date with 'origin/main'\n#\n# Changes to be committed:\n#   (use \"git restore --staged &lt;file&gt;...\" to unstage)\n#   new file:   README.md"
+  },
+  {
+    "objectID": "intro-git.html#working-w-github-2",
+    "href": "intro-git.html#working-w-github-2",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Working w/ GitHub",
+    "text": "Working w/ GitHub\n  Commit changes\n\n\n\n\n\ngit commit -m \"add README\"\n\ngit status\n\n# On branch main\n# Your branch is ahead of 'origin/main' by 1 commit.\n#   (use \"git push\" to publish your local commits)\n# \n# nothing to commit, working tree clean"
+  },
+  {
+    "objectID": "intro-git.html#working-w-github-3",
+    "href": "intro-git.html#working-w-github-3",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Working w/ GitHub",
+    "text": "Working w/ GitHub\n  Push changes to remote\n\n\n\n\n\ngit push\n\n# Sometimes, you'll need to use:\ngit push -u origin main\n\ngit status\n\n# On branch main\n# Your branch is up to date with 'origin/main'.\n# \n# nothing to commit, working tree clean"
+  },
+  {
+    "objectID": "intro-git.html#working-w-github-4",
+    "href": "intro-git.html#working-w-github-4",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Working w/ GitHub",
+    "text": "Working w/ GitHub\n  Pull changes from remote"
+  },
+  {
+    "objectID": "intro-git.html#working-w-github-5",
+    "href": "intro-git.html#working-w-github-5",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Working w/ GitHub",
+    "text": "Working w/ GitHub\n  Pull changes from remote\n\n\n\n\n\ngit pull\n\ngit status\n\n# On branch main\n# Your branch is up to date with 'origin/main'.\n# \n# nothing to commit, working tree clean"
+  },
+  {
+    "objectID": "intro-git.html#working-w-github-6",
+    "href": "intro-git.html#working-w-github-6",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Working w/ GitHub",
+    "text": "Working w/ GitHub\n   Make local changes\n\n\n\n\n\ngit status\n\n# On branch main\n# Your branch is up to date with 'origin/main'.\n# \n# Changes not staged for commit:\n#  (use \"git add &lt;file&gt;...\" to update what will be committed)\n#  (use \"git restore &lt;file&gt;...\" to discard changes in working directory)\n#    modified:   data.csv\n#    modified:   README.md"
+  },
+  {
+    "objectID": "intro-git.html#working-w-github-7",
+    "href": "intro-git.html#working-w-github-7",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Working w/ GitHub",
+    "text": "Working w/ GitHub\n   Stage changes\n\n\n\n\n\ngit add .\n\ngit status\n\n# On branch main\n# Your branch is up to date with 'origin/main'\n#\n# Changes to be committed:\n#  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n#   modified:   data.csv\n#   modified:   README.md"
+  },
+  {
+    "objectID": "intro-git.html#working-w-github-8",
+    "href": "intro-git.html#working-w-github-8",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Working w/ GitHub",
+    "text": "Working w/ GitHub\n   Commit changes\n\n\n\n\n\ngit commit -m \"update dataset and README\"\n\ngit status\n\n# On branch main\n# Your branch is ahead of 'origin/main' by 1 commit.\n#   (use \"git push\" to publish your local commits)\n# \n# nothing to commit, working tree clean"
+  },
+  {
+    "objectID": "intro-git.html#working-w-github-9",
+    "href": "intro-git.html#working-w-github-9",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Working w/ GitHub",
+    "text": "Working w/ GitHub\n   Don’t forget to Push changes to remote\n\n\n\n\n\ngit push\n\ngit status\n\n# On branch main\n# Your branch is up to date with 'origin/main'.\n# \n# nothing to commit, working tree clean"
+  },
+  {
+    "objectID": "intro-git.html#help-me-i-cant-push",
+    "href": "intro-git.html#help-me-i-cant-push",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Help me, I can’t push!",
+    "text": "Help me, I can’t push!\nWhen you try to push, you might see this following error message:\n\n\ngit push\n\n# To github.com:ahasverus/projectname.git\n#  ! [rejected]        main -&gt; main (fetch first)\n#\n# error: failed to push some refs to 'github.com:ahasverus/projectname.git'\n#\n# hint: Updates were rejected because the remote contains work that you do\n# hint: not have locally. This is usually caused by another repository pushing\n# hint: to the same ref. You may want to first integrate the remote changes\n# hint: (e.g., 'git pull ...') before pushing again.\n# hint: See the 'Note about fast-forwards' in 'git push --help' for details.\n\n\n\n\n\n  Just git pull and try to git push again"
+  },
+  {
+    "objectID": "intro-git.html#help-me-i-cant-pull",
+    "href": "intro-git.html#help-me-i-cant-pull",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Help me, I can’t pull!",
+    "text": "Help me, I can’t pull!\nWhen you try to pull, you might see this following error message:\n\n\ngit pull\n\n# [...]\n# Auto-merging README.md\n# CONFLICT (content): Merge conflict in README.md\n#\n# error: could not apply b8302e6... edit README\n#\n# hint: Resolve all conflicts manually, mark them as resolved with\n# hint: \"git add/rm &lt;conflicted_files&gt;\", then run \"git rebase --continue\".\n# hint: You can instead skip this commit: run \"git rebase --skip\".\n# hint: To abort and get back to the state before \"git rebase\", \n# hint: run \"git rebase --abort\".\n\n\n\n\n\n  Welcome to the wonderful world of git conflicts\nA git conflict appears when two versions cannot be merged by git because changes have been made to the same lines.\n\n\n\n  You have to decide which version you want to keep."
+  },
+  {
+    "objectID": "intro-git.html#the-.gitignore",
+    "href": "intro-git.html#the-.gitignore",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "The .gitignore",
+    "text": "The .gitignore\n  We can also tell git to ignore specific files: it’s the purpose of the .gitignore file\n\n\n\nWhich files? For instance:\n\npasswords, tokens and other secrets\ntemporary files\nlarge files\n\n\nThe syntax is simple:\n# Ignore a specific file\nREADME.html\n\n# Ignore all PDF\n*.pdf\n\n# Ignore a folder\ndata/\n\n# Ignore a subfolder\ndata/raw-data/\n\n# Ignore a specific file in a subfolder\ndata/raw-data/raw-data.csv\n\n\n\n  Template for  projects available here"
+  },
+  {
+    "objectID": "intro-git.html#github-as-a-gateway-to-open-source-projects",
+    "href": "intro-git.html#github-as-a-gateway-to-open-source-projects",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Github as a gateway to open source projects",
+    "text": "Github as a gateway to open source projects\n\n\n\nYou can access millions of open source projects and contribute to their development.\nAnd if your Github repository is public, everyone can use and contribute to your project.\n\nFork existing project : create an independent copy of a repository\nPull request : to contribute to the development of a repository\nMerge branches : accept development from other branches"
+  },
+  {
+    "objectID": "intro-git.html#github-as-a-social-platform",
+    "href": "intro-git.html#github-as-a-social-platform",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Github as a social platform",
+    "text": "Github as a social platform\n\n\n\n\nWatch/Star existing repository or Follow colleagues/developers\n\nIssues : anyone can fill an issue\n\ngood for keeping track of the todo list and future development\nissue can be attributed to someone, and categorized\nawesome tool to receive feedback from ‘users’ / colleagues\n\nWiki and ReadMe : help to organize the documentation of your code"
+  },
+  {
+    "objectID": "intro-git.html#take-home-message",
+    "href": "intro-git.html#take-home-message",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Take home message",
+    "text": "Take home message\n \n\nGit and Github are IT tools made to help you with the software development of your ecological data analysis. \nKey git/Github commands to remember:\n\n\n\npull\nstage and commit\npush\n\n\n\n \nMany resources online.\nPlease contact me if you have any issue using Git/Github:  romain.frelat@fondationbiodiversite.fr"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "\nFELLOW Workshop 2\n",
+    "section": "",
+    "text": "FELLOW Workshop 2\nContent • Contribute • Reuse • Citation • See also"
+  },
+  {
+    "objectID": "index.html#content",
+    "href": "index.html#content",
+    "title": "\nFELLOW Workshop 2\n",
+    "section": "Content",
+    "text": "Content\nThree online presentations for workshop 2 of FRB-CESAB group FELLOW.\n\n  Introduction to git and Github\n\n\n  Trait database\n\n\n  Environment databases"
+  },
+  {
+    "objectID": "index.html#contribute",
+    "href": "index.html#contribute",
+    "title": "\nFELLOW Workshop 2\n",
+    "section": "Contribute",
+    "text": "Contribute\nIf you see mistakes or want to suggest changes, please create an issue on the source repository."
+  },
+  {
+    "objectID": "index.html#reuse",
+    "href": "index.html#reuse",
+    "title": "\nFELLOW Workshop 2\n",
+    "section": "Reuse",
+    "text": "Reuse\nText and figures are licensed under Creative Commons Attribution CC By 4.0, unless otherwise noted."
+  },
+  {
+    "objectID": "index.html#citation",
+    "href": "index.html#citation",
+    "title": "\nFELLOW Workshop 2\n",
+    "section": "Citation",
+    "text": "Citation\nPlease cite these presentations as:\n\nFrelat R and Casajus N (2025) Version control with git and GitHub. URL: https://fellow-flora.github.io/intro-git.html.\n\n\nFrelat R, Barkaoui K, and Kazakou E (2025) Traits database - quick update and way forward. URL: https://fellow-flora.github.io/fellow-traits.html.\n\n\nFrelat R, Coux C, and Casajus N (2025) Environment databases frequently used in biodiversity research. URL: https://fellow-flora.github.io/env-data.html."
+  },
+  {
+    "objectID": "index.html#see-also",
+    "href": "index.html#see-also",
+    "title": "\nFELLOW Workshop 2\n",
+    "section": "See also",
+    "text": "See also\nDiscover the other training courses provided by the FRB-CESAB and its partners: https://frbcesab.github.io/training-courses/"
+  },
+  {
+    "objectID": "fellow-traits.html#species-list",
+    "href": "fellow-traits.html#species-list",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Species list",
+    "text": "Species list\n\n\n\n\n\nFiles in fellow-traits/data/raw-data/species-list\n\n\n\n\n\nMerge files (in analyses/01_get_specieslist.R)\n\nHarmonize the spellings with function clean_species_list():\n\nremove punctuations: ? . , ()\n\nremove sp, spp, cf, complex, …\n\nremove author name and years when included\n\nmake sure only first genus letter is uppercase\n\nremove “Arbre”, “Espece”, “Inconue”, “Repousse”, …\nremove taxa that are coarser than family: Dicotyledonae, Bryophyta\n\n\n\nNumber of unique taxa: 2286"
+  },
+  {
+    "objectID": "fellow-traits.html#species-list-1",
+    "href": "fellow-traits.html#species-list-1",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Species list",
+    "text": "Species list\n\n\nTaxonomic backbone\n\nTaxRef v18\nif not available, GBIF (based on Catalogue of Life)\n\n\nTaxa with no exact match in Taxref: 112\nTaxa not found in Taxref with fuzzy matching: 51\nTaxa not found in GBIF: 4 (Anisantha bromus, Festuca schedonorus, Ornithogalum muscari, Picris helminthotheca)\nNumber of accepted taxa: 2027\n\n\n\n\n    FAMILY      GENUS    SPECIES SUBSPECIES    VARIETY \n        15        241       1640        120         11 \n\n\nSynonyms\n46k known synonyms were retrieve from\noriginal species list, TaxRef and GBIF.\n\nspecialist: a taxa listed in only one database\ngeneralist: a taxa listed in 50% of the databases\n\n\nsp_class\nspecialist      other generalist \n       858        973        196"
+  },
+  {
+    "objectID": "fellow-traits.html#trait-databases",
+    "href": "fellow-traits.html#trait-databases",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Trait databases",
+    "text": "Trait databases\n\n\n\nMetadata in fellow-traits/data/raw-data/traits/Metatraits.xlsx"
+  },
+  {
+    "objectID": "fellow-traits.html#trait-coverage-per-database",
+    "href": "fellow-traits.html#trait-coverage-per-database",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Trait coverage per database",
+    "text": "Trait coverage per database"
+  },
+  {
+    "objectID": "fellow-traits.html#trait-coverage-per-database-1",
+    "href": "fellow-traits.html#trait-coverage-per-database-1",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Trait coverage per database",
+    "text": "Trait coverage per database"
+  },
+  {
+    "objectID": "fellow-traits.html#trait-coverage-per-database-2",
+    "href": "fellow-traits.html#trait-coverage-per-database-2",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Trait coverage per database",
+    "text": "Trait coverage per database"
+  },
+  {
+    "objectID": "fellow-traits.html#trait-coverage-per-taxonomic-rank",
+    "href": "fellow-traits.html#trait-coverage-per-taxonomic-rank",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Trait coverage per taxonomic rank",
+    "text": "Trait coverage per taxonomic rank\n\n\n\n\n\n\n\n\n\n\n\n\nTaxa with no trait information.\n\n\nAbies\nAcacia\nAgrimonia agrimonoides\nAgropyron\nAmaranthaceae\nApiaceae\nAsparagaceae\nAster\nBoraginaceae\nBrassicaceae\nBryum dichotomum\nCaryophyllaceae\nChaenomeles x superba\nChrysanthemum\nCochlearia\nCosmos\nCrambe abyssinica\nDysphania aristata\nGeraniaceae\nGlyceria\nImbribryum subapiculatum\nLamiaceae\nLavandula\nLeontodon autumnale\nLiliaceae\nLunaria\nMoehringia\nOrchis\nParonychia\nPiptatherum\nPoaceae\nPrimulaceae\nPulmonaria\nRhizogemma staphylina\nRiccia sorocarpa\nRiccia warnstorfii\nRoemeria hispida\nRosaceae\nRubiaceae"
+  },
+  {
+    "objectID": "fellow-traits.html#trait-coverage-per-species-frequency",
+    "href": "fellow-traits.html#trait-coverage-per-species-frequency",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Trait coverage per species frequency",
+    "text": "Trait coverage per species frequency"
+  },
+  {
+    "objectID": "fellow-traits.html#trait-completness",
+    "href": "fellow-traits.html#trait-completness",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Trait completness",
+    "text": "Trait completness"
+  },
+  {
+    "objectID": "fellow-traits.html#comparison---plant-height-m",
+    "href": "fellow-traits.html#comparison---plant-height-m",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Comparison - Plant height (m)",
+    "text": "Comparison - Plant height (m)\n\n\n\n\n\n\n\n\n\n   spvignes FlorealData    Lososova        BIEN        GIFT    Ecoflora \n       1888        1578         168         732         593        1000 \n     filled \n        132"
+  },
+  {
+    "objectID": "fellow-traits.html#comparison---sla",
+    "href": "fellow-traits.html#comparison---sla",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Comparison - SLA",
+    "text": "Comparison - SLA\n\n\n\n\n\n\n\n\n\nHodgson    GIFT    BIEN  filled \n   1090     875     866     589"
+  },
+  {
+    "objectID": "fellow-traits.html#comparison---seed-mass-mg",
+    "href": "fellow-traits.html#comparison---seed-mass-mg",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Comparison - Seed mass (mg)",
+    "text": "Comparison - Seed mass (mg)\n\n\n\n\n\n\n\n\n\nLososova     BIEN     GIFT Ecoflora Biolflor   filled \n     305      728      365     1271     1534      228"
+  },
+  {
+    "objectID": "fellow-traits.html#comparison---life-form",
+    "href": "fellow-traits.html#comparison---life-form",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Comparison - Life form",
+    "text": "Comparison - Life form"
+  },
+  {
+    "objectID": "fellow-traits.html#way-forward---open-questions",
+    "href": "fellow-traits.html#way-forward---open-questions",
+    "title": "FRB-CESAB Fellow workshop 2",
+    "section": "Way forward - open questions",
+    "text": "Way forward - open questions\n\nMissing trait information?\n\nwhich traits are missing? where to find them?\nrelevant trait database missing?\n\n\nHow to get clean and complete trait database?\n\ndo we need information for all species? can we discard the rare taxa / non-weed taxa?\nhow to combine trait information from multiple sources? biases?\ncan we measure missing trait? can we guesstimate some of them?\nshould we do trait imputation based on other traits or taxonomy?\nmost categorical traits should be cleaned (misspellings, irrelevant categories, …)\n\n\n\nWhat’s next?\n\na first stepping stone for multiple sub-projects\nin itself, is it a publishable output?\nhow to continue? who takes the lead from now?"
+  }
+]
