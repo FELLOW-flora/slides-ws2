@@ -1,0 +1,23 @@
+project:
+  type: website
+  execute-dir: project
+  output-dir: docs
+  render:
+    - "index.qmd"
+    - "intro-git.qmd"
+    - "fellow-traits.qmd"
+    - "env-data.qmd"
+
+execute: 
+  freeze: auto
+
+website:
+  title: "FRB-CESAB Fellow workshop 2"
+  repo-url: https://github.com/FELLOW-flora/slides-ws2
+  repo-actions: [issue]
+
+format:
+  html:
+    toc: true
+    link-external-newwindow: true
+    link-external-icon: false

@@ -8,7 +8,6 @@ format:
     auto-stretch: false
     toc-depth: 1
     theme: [default, "css/custom.scss"]
-    embed-resources: true
 engine: knitr
 ---
 
