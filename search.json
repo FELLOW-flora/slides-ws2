@@ -452,7 +452,7 @@
     "href": "index.html#content",
     "title": "\nFELLOW Workshop 2\n",
     "section": "Content",
-    "text": "Content\nThree online presentations for workshop 2 of FRB-CESAB group FELLOW.\n\n  Introduction to git and Github\n\n\n  Trait database\n\n\n  Environment databases"
+    "text": "Content\nThree online presentations for workshop 2 of FRB-CESAB group FELLOW.\n\n  Introduction to git and Github\n\n\n  FELLOW traits database\n\n\n  Environment databases"
   },
   {
     "objectID": "index.html#contribute",
@@ -473,7 +473,7 @@
     "href": "index.html#citation",
     "title": "\nFELLOW Workshop 2\n",
     "section": "Citation",
-    "text": "Citation\nPlease cite these presentations as:\n\nFrelat R and Casajus N (2025) Version control with git and GitHub. URL: https://fellow-flora.github.io/intro-git.html.\n\n\nFrelat R, Barkaoui K, and Kazakou E (2025) Traits database - quick update and way forward. URL: https://fellow-flora.github.io/fellow-traits.html.\n\n\nFrelat R, Coux C, and Casajus N (2025) Environment databases frequently used in biodiversity research. URL: https://fellow-flora.github.io/env-data.html."
+    "text": "Citation\nPlease cite these presentations as:\n\nFrelat R and Casajus N (2025) Version control with git and GitHub. URL: https://fellow-flora.github.io/slides-ws2/intro-git.html\n\n\nFrelat R, Barkaoui K, and Kazakou E (2025) Traits database - quick update and way forward. URL: https://fellow-flora.github.io/slides-ws2/fellow-traits.html\n\n\nFrelat R, Coux C, and Casajus N (2025) Environment databases frequently used in biodiversity research. URL: https://fellow-flora.github.io/slides-ws2/env-data.html"
   },
   {
     "objectID": "index.html#see-also",
